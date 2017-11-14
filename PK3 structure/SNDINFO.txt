@@ -1,0 +1,489 @@
+$playersound	BaronPlayerSnd	male	*death		dsbrsdth
+$playersound	BaronPlayerSnd	male	*xdeath		dsbrsdth
+$playersound	BaronPlayerSnd	male	*gibbed		dsslop
+$playersound	BaronPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	BaronPlayerSnd	male	*pain75		*pain100
+$playersounddup	BaronPlayerSnd	male	*pain50		*pain100
+$playersounddup	BaronPlayerSnd	male	*pain25		*pain100
+$playersound	BaronPlayerSnd	male	*grunt		dsbrssit
+$playersound	BaronPlayerSnd	male	*land		dsbrssit
+$playersound	BaronPlayerSnd	male	*jump		dsjump
+$playersound	BaronPlayerSnd	male	*fist		dsclaw
+$playersound	BaronPlayerSnd	male	*usefail	dsdmact
+
+$playersound	BaronPlayerSnd	female	*death		dsbrsdth
+$playersound	BaronPlayerSnd	female	*xdeath		dsbrsdth
+$playersound	BaronPlayerSnd	female	*gibbed		dsslop
+$playersound	BaronPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	BaronPlayerSnd	female	*pain75		*pain100
+$playersounddup	BaronPlayerSnd	female	*pain50		*pain100
+$playersounddup	BaronPlayerSnd	female	*pain25		*pain100
+$playersound	BaronPlayerSnd	female	*grunt		dsbrssit
+$playersound	BaronPlayerSnd	female	*land		dsbrssit
+$playersound	BaronPlayerSnd	female	*jump		dsjump
+$playersound	BaronPlayerSnd	female	*fist		dsclaw
+$playersound	BaronPlayerSnd	female	*usefail	dsdmact
+
+$playersound	BaronPlayerSnd	other	*death		dsbrsdth
+$playersound	BaronPlayerSnd	other	*xdeath		dsbrsdth
+$playersound	BaronPlayerSnd	other	*gibbed		dsslop
+$playersound	BaronPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	BaronPlayerSnd	other	*pain75		*pain100
+$playersounddup	BaronPlayerSnd	other	*pain50		*pain100
+$playersounddup	BaronPlayerSnd	other	*pain25		*pain100
+$playersound	BaronPlayerSnd	other	*grunt		dsbrssit
+$playersound	BaronPlayerSnd	other	*land		dsbrssit
+$playersound	BaronPlayerSnd	other	*jump		dscjump
+$playersound	BaronPlayerSnd	other	*fist		dsclaw
+$playersound	BaronPlayerSnd	other	*usefail	dsdmact
+
+/////////////////////////////////////////////////////////////////////////
+
+$playersound	DemonPlayerSnd	male	*death		dssgtdth
+$playersound	DemonPlayerSnd	male	*xdeath		dssgtdth
+$playersound	DemonPlayerSnd	male	*gibbed		dsslop
+$playersound	DemonPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	DemonPlayerSnd	male	*pain75		*pain100
+$playersounddup	DemonPlayerSnd	male	*pain50		*pain100
+$playersounddup	DemonPlayerSnd	male	*pain25		*pain100
+$playersound	DemonPlayerSnd	male	*grunt		dssgtsit
+$playersound	DemonPlayerSnd	male	*land		dssgtsit
+$playersound	DemonPlayerSnd	male	*jump		dsjump
+$playersound	DemonPlayerSnd	male	*fist		dssgtatk
+$playersound	DemonPlayerSnd	male	*usefail	dsdmact
+
+$playersound	DemonPlayerSnd	female	*death		dssgtdth
+$playersound	DemonPlayerSnd	female	*xdeath		dssgtdth
+$playersound	DemonPlayerSnd	female	*gibbed		dsslop
+$playersound	DemonPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	DemonPlayerSnd	female	*pain75		*pain100
+$playersounddup	DemonPlayerSnd	female	*pain50		*pain100
+$playersounddup	DemonPlayerSnd	female	*pain25		*pain100
+$playersound	DemonPlayerSnd	female	*grunt		dssgtsit
+$playersound	DemonPlayerSnd	female	*land		dssgtsit
+$playersound	DemonPlayerSnd	female	*jump		dsjump
+$playersound	DemonPlayerSnd	female	*fist		dssgtatk
+$playersound	DemonPlayerSnd	female	*usefail	dsdmact
+
+$playersound	DemonPlayerSnd	other	*death		dssgtdth
+$playersound	DemonPlayerSnd	other	*xdeath		dssgtdth
+$playersound	DemonPlayerSnd	other	*gibbed		dsslop
+$playersound	DemonPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	DemonPlayerSnd	other	*pain75		*pain100
+$playersounddup	DemonPlayerSnd	other	*pain50		*pain100
+$playersounddup	DemonPlayerSnd	other	*pain25		*pain100
+$playersound	DemonPlayerSnd	other	*grunt		dssgtsit
+$playersound	DemonPlayerSnd	other	*land		dssgtsit
+$playersound	DemonPlayerSnd	other	*jump		dscjump
+$playersound	DemonPlayerSnd	other	*fist		dssgtatk
+$playersound	DemonPlayerSnd	other	*usefail	dsdmact
+
+/////////////////////////////////////////////////////////////////////////
+
+$playersound	SpectrePlayerSnd	male	*death		dssgtdth
+$playersound	SpectrePlayerSnd	male	*xdeath		dssgtdth
+$playersound	SpectrePlayerSnd	male	*gibbed		dsslop
+$playersound	SpectrePlayerSnd	male	*pain100	dsdmpain
+$playersounddup	SpectrePlayerSnd	male	*pain75		*pain100
+$playersounddup	SpectrePlayerSnd	male	*pain50		*pain100
+$playersounddup	SpectrePlayerSnd	male	*pain25		*pain100
+$playersound	SpectrePlayerSnd	male	*grunt		dssgtsit
+$playersound	SpectrePlayerSnd	male	*land		dssgtsit
+$playersound	SpectrePlayerSnd	male	*jump		dsjump
+$playersound	SpectrePlayerSnd	male	*fist		dssgtatk
+$playersound	SpectrePlayerSnd	male	*usefail	dsdmact
+
+$playersound	SpectrePlayerSnd	female	*death		dssgtdth
+$playersound	SpectrePlayerSnd	female	*xdeath		dssgtdth
+$playersound	SpectrePlayerSnd	female	*gibbed		dsslop
+$playersound	SpectrePlayerSnd	female	*pain100	dsdmpain
+$playersounddup	SpectrePlayerSnd	female	*pain75		*pain100
+$playersounddup	SpectrePlayerSnd	female	*pain50		*pain100
+$playersounddup	SpectrePlayerSnd	female	*pain25		*pain100
+$playersound	SpectrePlayerSnd	female	*grunt		dssgtsit
+$playersound	SpectrePlayerSnd	female	*land		dssgtsit
+$playersound	SpectrePlayerSnd	female	*jump		dsjump
+$playersound	SpectrePlayerSnd	female	*fist		dssgtatk
+$playersound	SpectrePlayerSnd	female	*usefail	dsdmact
+
+$playersound	SpectrePlayerSnd	other	*death		dssgtdth
+$playersound	SpectrePlayerSnd	other	*xdeath		dssgtdth
+$playersound	SpectrePlayerSnd	other	*gibbed		dsslop
+$playersound	SpectrePlayerSnd	other	*pain100	dsdmpain
+$playersounddup	SpectrePlayerSnd	other	*pain75		*pain100
+$playersounddup	SpectrePlayerSnd	other	*pain50		*pain100
+$playersounddup	SpectrePlayerSnd	other	*pain25		*pain100
+$playersound	SpectrePlayerSnd	other	*grunt		dssgtsit
+$playersound	SpectrePlayerSnd	other	*land		dssgtsit
+$playersound	SpectrePlayerSnd	other	*jump		dscjump
+$playersound	SpectrePlayerSnd	other	*fist		dssgtatk
+$playersound	SpectrePlayerSnd	other	*usefail	dsdmact
+
+/////////////////////////////////////////////////////////////////////////
+
+$playersound	ImpPlayer	male	*death		dsbgdth1
+$playersound	ImpPlayer	male	*xdeath		dsbgdth2
+$playersound	ImpPlayer	male	*gibbed		dsslop
+$playersound	ImpPlayer	male	*pain100	dspopain
+$playersounddup	ImpPlayer	male	*pain75		*pain100
+$playersounddup	ImpPlayer	male	*pain50		*pain100
+$playersounddup	ImpPlayer	male	*pain25		*pain100
+$playersound	ImpPlayer	male	*grunt		dsbgsit1
+$playersound	ImpPlayer	male	*land		dsbgsit2
+$playersound	ImpPlayer	male	*jump		dsjump
+$playersound	ImpPlayer	male	*fist		dsclaw
+$playersound	ImpPlayer	male	*usefail	dsbgact
+
+$playersound	ImpPlayer	female	*death		dsbgdth1
+$playersound	ImpPlayer	female	*xdeath		dsbgdth2
+$playersound	ImpPlayer	female	*gibbed		dsslop
+$playersound	ImpPlayer	female	*pain100	dspopain
+$playersounddup	ImpPlayer	female	*pain75		*pain100
+$playersounddup	ImpPlayer	female	*pain50		*pain100
+$playersounddup	ImpPlayer	female	*pain25		*pain100
+$playersound	ImpPlayer	female	*grunt		dsbgsit1
+$playersound	ImpPlayer	female	*land		dsbgsit2
+$playersound	ImpPlayer	female	*jump		dsjump
+$playersound	ImpPlayer	female	*fist		dsclaw
+$playersound	ImpPlayer	female	*usefail	dsbgact
+
+$playersound	ImpPlayer	other	*death		dsbgdth1
+$playersound	ImpPlayer	other	*xdeath		dsbgdth2
+$playersound	ImpPlayer	other	*gibbed		dsslop
+$playersound	ImpPlayer	other	*pain100	dspopain
+$playersounddup	ImpPlayer	other	*pain75		*pain100
+$playersounddup	ImpPlayer	other	*pain50		*pain100
+$playersounddup	ImpPlayer	other	*pain25		*pain100
+$playersound	ImpPlayer	other	*grunt		dsbgsit1
+$playersound	ImpPlayer	other	*land		dsbgsit2
+$playersound	ImpPlayer	other	*jump		dscjump
+$playersound	ImpPlayer	other	*fist		dsclaw
+$playersound	ImpPlayer	other	*usefail	dsbgact
+
+/////////////////////////////////////////////////////////////////////////
+
+$playersound	FatsoPlayerSnd	male	*death		dsmandth
+$playersound	FatsoPlayerSnd	male	*xdeath		dsmandth
+$playersound	FatsoPlayerSnd	male	*gibbed		dsslop
+$playersound	FatsoPlayerSnd	male	*pain100	dsmnpain
+$playersounddup	FatsoPlayerSnd	male	*pain75		*pain100
+$playersounddup	FatsoPlayerSnd	male	*pain50		*pain100
+$playersounddup	FatsoPlayerSnd	male	*pain25		*pain100
+$playersound	FatsoPlayerSnd	male	*grunt		dsmansit
+$playersound	FatsoPlayerSnd	male	*land		dsmansit
+$playersound	FatsoPlayerSnd	male	*jump		dsjump
+$playersound	FatsoPlayerSnd	male	*fist		dsfirsht
+$playersound	FatsoPlayerSnd	male	*usefail	dsposact
+
+$playersound	FatsoPlayerSnd	female	*death		dsmandth
+$playersound	FatsoPlayerSnd	female	*xdeath		dsmandth
+$playersound	FatsoPlayerSnd	female	*gibbed		dsslop
+$playersound	FatsoPlayerSnd	female	*pain100	dsmnpain
+$playersounddup	FatsoPlayerSnd	female	*pain75		*pain100
+$playersounddup	FatsoPlayerSnd	female	*pain50		*pain100
+$playersounddup	FatsoPlayerSnd	female	*pain25		*pain100
+$playersound	FatsoPlayerSnd	female	*grunt		dsmansit
+$playersound	FatsoPlayerSnd	female	*land		dsmansit
+$playersound	FatsoPlayerSnd	female	*jump		dsjump
+$playersound	FatsoPlayerSnd	female	*fist		dsfirsht
+$playersound	FatsoPlayerSnd	female	*usefail	dsposact
+
+$playersound	FatsoPlayerSnd	other	*death		dsmandth
+$playersound	FatsoPlayerSnd	other	*xdeath		dsmandth
+$playersound	FatsoPlayerSnd	other	*gibbed		dsslop
+$playersound	FatsoPlayerSnd	other	*pain100	dsmnpain
+$playersounddup	FatsoPlayerSnd	other	*pain75		*pain100
+$playersounddup	FatsoPlayerSnd	other	*pain50		*pain100
+$playersounddup	FatsoPlayerSnd	other	*pain25		*pain100
+$playersound	FatsoPlayerSnd	other	*grunt		dsmansit
+$playersound	FatsoPlayerSnd	other	*land		dsmansit
+$playersound	FatsoPlayerSnd	other	*jump		dscjump
+$playersound	FatsoPlayerSnd	other	*fist		dsfirsht
+$playersound	FatsoPlayerSnd	other	*usefail	dsposact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	CacodemonPlayerSnd	male	*death		dscacdth
+$playersound	CacodemonPlayerSnd	male	*xdeath		dscacdth
+$playersound	CacodemonPlayerSnd	male	*gibbed		dsslop
+$playersound	CacodemonPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	CacodemonPlayerSnd	male	*pain75		*pain100
+$playersounddup	CacodemonPlayerSnd	male	*pain50		*pain100
+$playersounddup	CacodemonPlayerSnd	male	*pain25		*pain100
+$playersound	CacodemonPlayerSnd	male	*grunt		dscacsit
+$playersound	CacodemonPlayerSnd	male	*land		dscacsit
+$playersound	CacodemonPlayerSnd	male	*jump		dsjump
+$playersound	CacodemonPlayerSnd	male	*fist		dsfirsht
+$playersound	CacodemonPlayerSnd	male	*usefail	dsdmact
+
+$playersound	CacodemonPlayerSnd	female	*death		dscacdth
+$playersound	CacodemonPlayerSnd	female	*xdeath		dscacdth
+$playersound	CacodemonPlayerSnd	female	*gibbed		dsslop
+$playersound	CacodemonPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	CacodemonPlayerSnd	female	*pain75		*pain100
+$playersounddup	CacodemonPlayerSnd	female	*pain50		*pain100
+$playersounddup	CacodemonPlayerSnd	female	*pain25		*pain100
+$playersound	CacodemonPlayerSnd	female	*grunt		dscacsit
+$playersound	CacodemonPlayerSnd	female	*land		dscacsit
+$playersound	CacodemonPlayerSnd	female	*jump		dsjump
+$playersound	CacodemonPlayerSnd	female	*fist		dsfirsht
+$playersound	CacodemonPlayerSnd	female	*usefail	dsdmact
+
+$playersound	CacodemonPlayerSnd	other	*death		dscacdth
+$playersound	CacodemonPlayerSnd	other	*xdeath		dscacdth
+$playersound	CacodemonPlayerSnd	other	*gibbed		dsslop
+$playersound	CacodemonPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	CacodemonPlayerSnd	other	*pain75		*pain100
+$playersounddup	CacodemonPlayerSnd	other	*pain50		*pain100
+$playersounddup	CacodemonPlayerSnd	other	*pain25		*pain100
+$playersound	CacodemonPlayerSnd	other	*grunt		dscacsit
+$playersound	CacodemonPlayerSnd	other	*land		dscacsit
+$playersound	CacodemonPlayerSnd	other	*jump		dscjump
+$playersound	CacodemonPlayerSnd	other	*fist		dsfirsht
+$playersound	CacodemonPlayerSnd	other	*usefail	dsdmact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	PainPlayerSnd	male	*death		dspedth
+$playersound	PainPlayerSnd	male	*xdeath		dspedth
+$playersound	PainPlayerSnd	male	*gibbed		dsslop
+$playersound	PainPlayerSnd	male	*pain100	dspepain
+$playersounddup	PainPlayerSnd	male	*pain75		*pain100
+$playersounddup	PainPlayerSnd	male	*pain50		*pain100
+$playersounddup	PainPlayerSnd	male	*pain25		*pain100
+$playersound	PainPlayerSnd	male	*grunt		dspesit
+$playersound	PainPlayerSnd	male	*land		dspesit
+$playersound	PainPlayerSnd	male	*jump		dsjump
+$playersound	PainPlayerSnd	male	*fist		dsfirsht
+$playersound	PainPlayerSnd	male	*usefail	dsdmact
+
+$playersound	PainPlayerSnd	female	*death		dspedth
+$playersound	PainPlayerSnd	female	*xdeath		dspedth
+$playersound	PainPlayerSnd	female	*gibbed		dsslop
+$playersound	PainPlayerSnd	female	*pain100	dspepain
+$playersounddup	PainPlayerSnd	female	*pain75		*pain100
+$playersounddup	PainPlayerSnd	female	*pain50		*pain100
+$playersounddup	PainPlayerSnd	female	*pain25		*pain100
+$playersound	PainPlayerSnd	female	*grunt		dspesit
+$playersound	PainPlayerSnd	female	*land		dspesit
+$playersound	PainPlayerSnd	female	*jump		dsjump
+$playersound	PainPlayerSnd	female	*fist		dsfirsht
+$playersound	PainPlayerSnd	female	*usefail	dsdmact
+
+$playersound	PainPlayerSnd	other	*death		dspedth
+$playersound	PainPlayerSnd	other	*xdeath		dspedth
+$playersound	PainPlayerSnd	other	*gibbed		dsslop
+$playersound	PainPlayerSnd	other	*pain100	dspepain
+$playersounddup	PainPlayerSnd	other	*pain75		*pain100
+$playersounddup	PainPlayerSnd	other	*pain50		*pain100
+$playersounddup	PainPlayerSnd	other	*pain25		*pain100
+$playersound	PainPlayerSnd	other	*grunt		dspesit
+$playersound	PainPlayerSnd	other	*land		dspesit
+$playersound	PainPlayerSnd	other	*jump		dscjump
+$playersound	PainPlayerSnd	other	*fist		dsfirsht
+$playersound	PainPlayerSnd	other	*usefail	dsdmact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	ArachnotronPlayerSnd	male	*death		dsbspdth
+$playersound	ArachnotronPlayerSnd	male	*xdeath		dsbspdth
+$playersound	ArachnotronPlayerSnd	male	*gibbed		dsslop
+$playersound	ArachnotronPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	ArachnotronPlayerSnd	male	*pain75		*pain100
+$playersounddup	ArachnotronPlayerSnd	male	*pain50		*pain100
+$playersounddup	ArachnotronPlayerSnd	male	*pain25		*pain100
+$playersound	ArachnotronPlayerSnd	male	*grunt		dsbspsit
+$playersound	ArachnotronPlayerSnd	male	*land		dsbspsit
+$playersound	ArachnotronPlayerSnd	male	*jump		dsjump
+$playersound	ArachnotronPlayerSnd	male	*fist		dsplasma
+$playersound	ArachnotronPlayerSnd	male	*usefail	dsbspact
+
+$playersound	ArachnotronPlayerSnd	female	*death		dsbspdth
+$playersound	ArachnotronPlayerSnd	female	*xdeath		dsbspdth
+$playersound	ArachnotronPlayerSnd	female	*gibbed		dsslop
+$playersound	ArachnotronPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	ArachnotronPlayerSnd	female	*pain75		*pain100
+$playersounddup	ArachnotronPlayerSnd	female	*pain50		*pain100
+$playersounddup	ArachnotronPlayerSnd	female	*pain25		*pain100
+$playersound	ArachnotronPlayerSnd	female	*grunt		dsbspsit
+$playersound	ArachnotronPlayerSnd	female	*land		dsbspsit
+$playersound	ArachnotronPlayerSnd	female	*jump		dsjump
+$playersound	ArachnotronPlayerSnd	female	*fist		dsplasma
+$playersound	ArachnotronPlayerSnd	female	*usefail	dsbspact
+
+$playersound	ArachnotronPlayerSnd	other	*death		dsbspdth
+$playersound	ArachnotronPlayerSnd	other	*xdeath		dsbspdth
+$playersound	ArachnotronPlayerSnd	other	*gibbed		dsslop
+$playersound	ArachnotronPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	ArachnotronPlayerSnd	other	*pain75		*pain100
+$playersounddup	ArachnotronPlayerSnd	other	*pain50		*pain100
+$playersounddup	ArachnotronPlayerSnd	other	*pain25		*pain100
+$playersound	ArachnotronPlayerSnd	other	*grunt		dsbspsit
+$playersound	ArachnotronPlayerSnd	other	*land		dsbspsit
+$playersound	ArachnotronPlayerSnd	other	*jump		dscjump
+$playersound	ArachnotronPlayerSnd	other	*fist		dsplasma
+$playersound	ArachnotronPlayerSnd	other	*usefail	dsbspact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	RevenantPlayerSnd	male	*death		dsskedth
+$playersound	RevenantPlayerSnd	male	*xdeath		dsskedth
+$playersound	RevenantPlayerSnd	male	*gibbed		dsslop
+$playersound	RevenantPlayerSnd	male	*pain100	dspopain
+$playersounddup	RevenantPlayerSnd	male	*pain75		*pain100
+$playersounddup	RevenantPlayerSnd	male	*pain50		*pain100
+$playersounddup	RevenantPlayerSnd	male	*pain25		*pain100
+$playersound	RevenantPlayerSnd	male	*grunt		dsskesit
+$playersound	RevenantPlayerSnd	male	*land		dsskesit
+$playersound	RevenantPlayerSnd	male	*jump		dsjump
+$playersound	RevenantPlayerSnd	male	*fist		dsskepch
+$playersound	RevenantPlayerSnd	male	*usefail	dsskeact
+
+$playersound	RevenantPlayerSnd	female	*death		dsskedth
+$playersound	RevenantPlayerSnd	female	*xdeath		dsskedth
+$playersound	RevenantPlayerSnd	female	*gibbed		dsslop
+$playersound	RevenantPlayerSnd	female	*pain100	dspopain
+$playersounddup	RevenantPlayerSnd	female	*pain75		*pain100
+$playersounddup	RevenantPlayerSnd	female	*pain50		*pain100
+$playersounddup	RevenantPlayerSnd	female	*pain25		*pain100
+$playersound	RevenantPlayerSnd	female	*grunt		dsskesit
+$playersound	RevenantPlayerSnd	female	*land		dsskesit
+$playersound	RevenantPlayerSnd	female	*jump		dsjump
+$playersound	RevenantPlayerSnd	female	*fist		dsskepch
+$playersound	RevenantPlayerSnd	female	*usefail	dsskeact
+
+$playersound	RevenantPlayerSnd	other	*death		dsskedth
+$playersound	RevenantPlayerSnd	other	*xdeath		dsskedth
+$playersound	RevenantPlayerSnd	other	*gibbed		dsslop
+$playersound	RevenantPlayerSnd	other	*pain100	dspopain
+$playersounddup	RevenantPlayerSnd	other	*pain75		*pain100
+$playersounddup	RevenantPlayerSnd	other	*pain50		*pain100
+$playersounddup	RevenantPlayerSnd	other	*pain25		*pain100
+$playersound	RevenantPlayerSnd	other	*grunt		dsskesit
+$playersound	RevenantPlayerSnd	other	*land		dsskesit
+$playersound	RevenantPlayerSnd	other	*jump		dscjump
+$playersound	RevenantPlayerSnd	other	*fist		dsskepch
+$playersound	RevenantPlayerSnd	other	*usefail	dsskeact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	SpiderPlayerSnd	male	*death		dsspidth
+$playersound	SpiderPlayerSnd	male	*xdeath		dsspidth
+$playersound	SpiderPlayerSnd	male	*gibbed		dsslop
+$playersound	SpiderPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	SpiderPlayerSnd	male	*pain75		*pain100
+$playersounddup	SpiderPlayerSnd	male	*pain50		*pain100
+$playersounddup	SpiderPlayerSnd	male	*pain25		*pain100
+$playersound	SpiderPlayerSnd	male	*grunt		dsspisit
+$playersound	SpiderPlayerSnd	male	*land		dsspisit
+$playersound	SpiderPlayerSnd	male	*jump		dsjump
+$playersound	SpiderPlayerSnd	male	*fist		dsshotgn
+$playersound	SpiderPlayerSnd	male	*usefail	dsdmact
+
+$playersound	SpiderPlayerSnd	female	*death		dsspidth
+$playersound	SpiderPlayerSnd	female	*xdeath		dsspidth
+$playersound	SpiderPlayerSnd	female	*gibbed		dsslop
+$playersound	SpiderPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	SpiderPlayerSnd	female	*pain75		*pain100
+$playersounddup	SpiderPlayerSnd	female	*pain50		*pain100
+$playersounddup	SpiderPlayerSnd	female	*pain25		*pain100
+$playersound	SpiderPlayerSnd	female	*grunt		dsspisit
+$playersound	SpiderPlayerSnd	female	*land		dsspisit
+$playersound	SpiderPlayerSnd	female	*jump		dsjump
+$playersound	SpiderPlayerSnd	female	*fist		dsshotgn
+$playersound	SpiderPlayerSnd	female	*usefail	dsdmact
+
+$playersound	SpiderPlayerSnd	other	*death		dsspidth
+$playersound	SpiderPlayerSnd	other	*xdeath		dsspidth
+$playersound	SpiderPlayerSnd	other	*gibbed		dsslop
+$playersound	SpiderPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	SpiderPlayerSnd	other	*pain75		*pain100
+$playersounddup	SpiderPlayerSnd	other	*pain50		*pain100
+$playersounddup	SpiderPlayerSnd	other	*pain25		*pain100
+$playersound	SpiderPlayerSnd	other	*grunt		dsspisit
+$playersound	SpiderPlayerSnd	other	*land		dsspisit
+$playersound	SpiderPlayerSnd	other	*jump		dscjump
+$playersound	SpiderPlayerSnd	other	*fist		dsshotgn
+$playersound	SpiderPlayerSnd	other	*usefail	dsdmact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	CyberdemonPlayerSnd	male	*death		dscybdth
+$playersound	CyberdemonPlayerSnd	male	*xdeath		dscybdth
+$playersound	CyberdemonPlayerSnd	male	*gibbed		dsslop
+$playersound	CyberdemonPlayerSnd	male	*pain100	dsdmpain
+$playersounddup	CyberdemonPlayerSnd	male	*pain75		*pain100
+$playersounddup	CyberdemonPlayerSnd	male	*pain50		*pain100
+$playersounddup	CyberdemonPlayerSnd	male	*pain25		*pain100
+$playersound	CyberdemonPlayerSnd	male	*grunt		dscybsit
+$playersound	CyberdemonPlayerSnd	male	*land		dscybsit
+$playersound	CyberdemonPlayerSnd	male	*jump		dsjump
+$playersound	CyberdemonPlayerSnd	male	*fist		dshoof
+$playersound	CyberdemonPlayerSnd	male	*usefail	dsdmact
+
+$playersound	CyberdemonPlayerSnd	female	*death		dscybdth
+$playersound	CyberdemonPlayerSnd	female	*xdeath		dscybdth
+$playersound	CyberdemonPlayerSnd	female	*gibbed		dsslop
+$playersound	CyberdemonPlayerSnd	female	*pain100	dsdmpain
+$playersounddup	CyberdemonPlayerSnd	female	*pain75		*pain100
+$playersounddup	CyberdemonPlayerSnd	female	*pain50		*pain100
+$playersounddup	CyberdemonPlayerSnd	female	*pain25		*pain100
+$playersound	CyberdemonPlayerSnd	female	*grunt		dscybsit
+$playersound	CyberdemonPlayerSnd	female	*land		dscybsit
+$playersound	CyberdemonPlayerSnd	female	*jump		dsjump
+$playersound	CyberdemonPlayerSnd	female	*fist		dshoof
+$playersound	CyberdemonPlayerSnd	female	*usefail	dsdmact
+
+$playersound	CyberdemonPlayerSnd	other	*death		dscybdth
+$playersound	CyberdemonPlayerSnd	other	*xdeath		dscybdth
+$playersound	CyberdemonPlayerSnd	other	*gibbed		dsslop
+$playersound	CyberdemonPlayerSnd	other	*pain100	dsdmpain
+$playersounddup	CyberdemonPlayerSnd	other	*pain75		*pain100
+$playersounddup	CyberdemonPlayerSnd	other	*pain50		*pain100
+$playersounddup	CyberdemonPlayerSnd	other	*pain25		*pain100
+$playersound	CyberdemonPlayerSnd	other	*grunt		dscybsit
+$playersound	CyberdemonPlayerSnd	other	*land		dscybsit
+$playersound	CyberdemonPlayerSnd	other	*jump		dscjump
+$playersound	CyberdemonPlayerSnd	other	*fist		dshoof
+$playersound	CyberdemonPlayerSnd	other	*usefail	dsdmact
+
+//////////////////////////////////////////////////////////////////////////
+
+$playersound	ArchVilePlayerSnd	male	*death		dsvildth
+$playersound	ArchVilePlayerSnd	male	*xdeath		dsvildth
+$playersound	ArchVilePlayerSnd	male	*gibbed		dsslop
+$playersound	ArchVilePlayerSnd	male	*pain100	dsvipain
+$playersounddup	ArchVilePlayerSnd	male	*pain75		*pain100
+$playersounddup	ArchVilePlayerSnd	male	*pain50		*pain100
+$playersounddup	ArchVilePlayerSnd	male	*pain25		*pain100
+$playersound	ArchVilePlayerSnd	male	*grunt		dsvilsit
+$playersound	ArchVilePlayerSnd	male	*land		dsvilsit
+$playersound	ArchVilePlayerSnd	male	*jump		dsjump
+$playersound	ArchVilePlayerSnd	male	*fist		dsvilatk
+$playersound	ArchVilePlayerSnd	male	*usefail	dsvilact
+
+$playersound	ArchVilePlayerSnd	female	*death		dsvildth
+$playersound	ArchVilePlayerSnd	female	*xdeath		dsvildth
+$playersound	ArchVilePlayerSnd	female	*gibbed		dsslop
+$playersound	ArchVilePlayerSnd	female	*pain100	dsvipain
+$playersounddup	ArchVilePlayerSnd	female	*pain75		*pain100
+$playersounddup	ArchVilePlayerSnd	female	*pain50		*pain100
+$playersounddup	ArchVilePlayerSnd	female	*pain25		*pain100
+$playersound	ArchVilePlayerSnd	female	*grunt		dsvilsit
+$playersound	ArchVilePlayerSnd	female	*land		dsvilsit
+$playersound	ArchVilePlayerSnd	female	*jump		dsjump
+$playersound	ArchVilePlayerSnd	female	*fist		dsvilatk
+$playersound	ArchVilePlayerSnd	female	*usefail	dsvilact
+
+$playersound	ArchVilePlayerSnd	other	*death		dsvildth
+$playersound	ArchVilePlayerSnd	other	*xdeath		dsvildth
+$playersound	ArchVilePlayerSnd	other	*gibbed		dsslop
+$playersound	ArchVilePlayerSnd	other	*pain100	dsvipain
+$playersounddup	ArchVilePlayerSnd	other	*pain75		*pain100
+$playersounddup	ArchVilePlayerSnd	other	*pain50		*pain100
+$playersounddup	ArchVilePlayerSnd	other	*pain25		*pain100
+$playersound	ArchVilePlayerSnd	other	*grunt		dsvilsit
+$playersound	ArchVilePlayerSnd	other	*land		dsvilsit
+$playersound	ArchVilePlayerSnd	other	*jump		dscjump
+$playersound	ArchVilePlayerSnd	other	*fist		dsvilatk
+$playersound	ArchVilePlayerSnd	other	*usefail	dsvilact

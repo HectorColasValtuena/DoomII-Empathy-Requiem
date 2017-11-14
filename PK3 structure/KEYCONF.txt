@@ -1,0 +1,24 @@
+clearplayerclasses
+
+addplayerclass BaronPlayer
+addplayerclass DemonPlayer
+addplayerclass SpectrePlayer
+addplayerclass ImpPlayer
+addplayerclass FastoPlayer
+addplayerclass CacodemonPlayer
+addplayerclass PainElementalPlayer
+addplayerclass ArachnotronPlayer
+addplayerclass RevenantPlayer
+addplayerclass SpiderMastermindPlayer
+addplayerclass CyberdemonPlayer
+addplayerclass ArchVilePlayer
+
+weaponsection mephistoII666EmpathyWeaponry
+
+setslot 1 BaronArm DemonJaws SpectreJaws ImpArm MancubusArms CacodemonMouth PainMouth 
+setslot 2 ArachnotronRifle RevenantCanons SpiderChaingun CyberdemonCanon ArchVilePower
+setslot 3
+setslot 4
+setslot 5
+setslot 6
+setslot 7

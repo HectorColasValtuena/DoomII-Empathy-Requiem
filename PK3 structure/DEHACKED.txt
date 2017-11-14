@@ -1,0 +1,15 @@
+[STRINGS]
+QUITMSG1 = You don't mind what they feel??
+QUITMSG2 = Already quitting?
+QUITMSG3 = You don't mind what they think??
+QUITMSG4 = Owh man... are you really leaving??
+QUITMSG5 = OK. GO. I don't mind. It's fine with me.
+QUITMSG6 = You are not enough empathic??
+QUITMSG7 = I cannot understand you,\nAND I try hardly.
+QUITMSG8 = Why are you leaving??
+QUITMSG9 = Empathics stay, schizophrenics leave.
+QUITMSG10 = Why are you leaving??
+QUITMSG11 = Are you trying to say something??
+QUITMSG12 = Don't leave!!\nI can change!!
+QUITMSG13 = I understand you.\nBelieve or not. I do. Really.
+QUITMSG14 = The Yurei awaits your soul...
