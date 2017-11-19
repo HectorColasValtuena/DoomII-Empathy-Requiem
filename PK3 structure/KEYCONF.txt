@@ -3,7 +3,8 @@ clearplayerclasses
 addplayerclass BaronPlayer
 addplayerclass DemonPlayer
 addplayerclass SpectrePlayer
-addplayerclass ImpPlayer
+//addplayerclass ImpPlayer
+addplayerclass BloodImpPlayer
 addplayerclass FastoPlayer
 addplayerclass CacodemonPlayer
 addplayerclass PainElementalPlayer
@@ -15,7 +16,7 @@ addplayerclass ArchVilePlayer
 
 weaponsection mephistoII666EmpathyWeaponry
 
-setslot 1 BaronArm DemonJaws SpectreJaws ImpArm MancubusArms CacodemonMouth PainMouth 
+setslot 1 BaronArm DemonJaws SpectreJaws ImpArm BloodImpArm MancubusArms CacodemonMouth PainMouth 
 setslot 2 ArachnotronRifle RevenantCanons SpiderChaingun CyberdemonCanon ArchVilePower
 setslot 3
 setslot 4

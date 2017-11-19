@@ -1,0 +1,11 @@
+#include "zcommon.acs"
+
+script 999 (void)
+{
+SetPlayerProperty (0,1,PROP_FROZEN);
+}
+
+script 998 (void)
+{
+SetPlayerProperty (0,0,PROP_FROZEN);
+}

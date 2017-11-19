@@ -1,0 +1,236 @@
+////////////////////////////////////////////////////
+//////////////////// BLOOD  IMP ////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Includes
+
+#include "Decorate/PlayerClasses/BaseEmpathyPlayer.txt"
+
+
+////////////////////////////////////////////////////
+////  Defines
+
+const float BloodImpBurstSize = 12;
+const float BloodImpBurstSpread = 4.5;
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor BloodImpPlayer : BaseEmpathyPlayer
+{
+  Speed 1      //Speed 0.4861
+  Health 75  //60
+  Radius 10 //20
+  Height 28 //56
+  Mass 50
+  PainChance 255
+  player.JumpZ 16.0 //8.0
+  player.viewheight 24
+  player.maxhealth 75
+  player.soundclass "ImpPlayer"
+  player.morphweapon "BloodImpArm"
+  Player.ColorRange 0, 0
+  Player.DisplayName "Blood Imp"
+  Player.StartItem "BloodImpArm"
+  Player.StartItem "PlayerIsBloodImp"
+  Player.StartItem "BloodImpMana", 12
+
+/*
+        Player.StartItem "BFG9000"    //all weapons are given to avoid autoswitch
+        Player.StartItem "Chaingun"
+        Player.StartItem "Chainsaw"
+        Player.StartItem "Fist"
+        Player.StartItem "Pistol"
+        Player.StartItem "PlasmaRifle"
+        Player.StartItem "RocketLauncher"
+        Player.StartItem "Shotgun"
+        Player.StartItem "SuperShotgun"
+*/
+
+  States
+  {
+  Spawn:
+    PRIM A 7
+    //PRIM A 0 A_GiveInventory ("BloodImpMana",ManaRegenBase)
+    PRIM B 7
+    //PRIM B 0 A_GiveInventory ("BloodImpMana",ManaRegenBase)
+    Loop
+  See:
+    PRIM AABBCCDD 3 
+    Loop
+  Missile:
+    PRIM EF 8
+    PRIM G  6
+    Goto Spawn
+  Melee:
+    PRIM EF 8
+    PRIM G  6
+    Goto Spawn
+  Pain:
+    PRIM H 4
+    PRIM H 4 A_Pain
+    Goto Spawn
+  Death:
+    PRIM I 8 A_PlayerSkinCheck("AltSkinDeath")
+    PRIM J 8 A_PlayerScream
+    PRIM K 6
+    PRIM L 6 A_NoBlocking
+    PRIM M -1
+    Stop
+  XDeath:
+    PRIM N 5 A_PlayerSkinCheck("AltSkinXDeath")
+    PRIM O 5 A_XScream
+    PRIM P 5
+    PRIM Q 5 A_NoBlocking
+    PRIM RST 5
+    PRIM U -1
+    Stop
+  AltSkinDeath:
+    PRIM I 8
+    PRIM J 8 A_PlayerScream
+    PRIM K 6
+    PRIM L 6 A_NoBlocking
+    PRIM M -1
+    Stop
+  AltSkinXDeath:
+    PRIM N 5 A_PlayerScream
+    PRIM O 5 A_NoBlocking
+    PRIM P 5
+    PRIM Q 5 A_SkullPop
+    PRIM RST 5
+    PRIM U -1
+    Stop
+  }
+  }
+
+
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+
+actor BloodImpArm : weapon
+{
+  radius 20
+  height 20
+  obituary "%o ate some k%'s IMP fire"
+  inventory.pickupmessage "IMP-MAN"
+  attacksound "imp/melee"
+  weapon.selectionorder 2500
+  weapon.kickback 200
+  weapon.ammotype1 "BloodImpMana"
+  weapon.ammotype2 "BloodImpMana"
+  weapon.ammouse1 1
+  weapon.ammouse2 -3
+  //weapon.ammogive BloodImpBurstSize
+  +WEAPON.NOAUTOAIM
+  //+WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      IMPW A 1 A_Lower 
+      LOOP 
+
+    Select: 
+      IMPW A 1 A_Raise 
+      LOOP
+
+    Ready: 
+      IMPW A 18 A_WeaponReady
+      IMPW A 0 A_GiveInventory ("BloodImpMana", 1)
+      LOOP
+
+    Fire:
+      //IMPW A 0 A_JumpIfNoAmmo ("AltFire")
+      goto FireBurstStart
+
+    FireBurstStart:
+      IMPW F 2
+      IMPW G 2
+      IMPW H 2 A_GunFlash
+      goto FireBurstLoop
+
+    //A_FireProjectile (string missiletype, [angle angle], [bool useammo], [float spawnofs_horz], [int spawnheight], [int flags], [float pitch])
+    FireBurstLoop:
+      IMPW H 0 A_JumpIfNoAmmo ("FireBurstEnd")
+      IMPW H 0 A_FireProjectile ("BloodImpBall", frandom(-BloodImpBurstSpread, BloodImpBurstSpread), 1, 0, 0, 0, frandom(-BloodImpBurstSpread, BloodImpBurstSpread))  
+      goto FireBurstLoop
+
+    FireBurstEnd:
+      IMPW H 2
+      IMPW I 4
+      goto Ready
+
+    Flash:
+      TNT1 A 4 bright A_Light1
+      TNT1 A 0 A_Light0
+      stop
+
+// melee
+//A_CustomPunch (int damage [, bool norandom [, int flags [, string pufftype [, float range [, float lifesteal [, int lifestealmax [, string armorbonustype [, sound meleesound [, sound misssound]]]]]]]]])
+    AltFire:
+      IMPW BC 3
+      IMPW D 3 A_CustomPunch (1) //, false, (CPF_STEALARMOR), BulletPuff, true, 0, )
+      IMPW E 3
+      IMPW E 0 A_JumpIfInventory("BloodImpMana", (BloodImpBurstSize + 1), "ResetAmmo")  //if above maximum ammo, reset ammo count before proceeding
+      goto FinishMelee
+
+    ResetAmmo:
+      IMPW E 0 A_TakeInventory("BloodImpMana", 0x7fffffff)
+      IMPW E 0 A_GiveInventory("BloodImpMana", BloodImpBurstSize)
+      goto FinishMelee
+
+    FinishMelee:
+      TNT1 A 3 A_ReFire
+      IMPW J 3
+      goto Ready
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Projectile actor class
+
+actor BloodImpBall : DoomImpBall
+{
+  Radius 6
+  Height 8
+  Speed 10
+  FastSpeed 20
+  Damage 1
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 0.5
+  SeeSound "imp/attack"
+  DeathSound "imp/shotx"
+  States
+  {
+  Spawn:
+    BAL1 AB 4 Bright
+    Loop
+  Death:
+    BAL1 CDE 6 Bright
+    Stop
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor BloodImpMana : ammo
+{
+  inventory.amount 12
+  inventory.maxamount 12
+  inventory.icon "BAL1B0"
+  RENDERSTYLE TRANSLUCENT
+  ALPHA 0.5
+  states
+  {
+    Spawn:
+      BAL1 AB 5
+      loop
+  }
+}

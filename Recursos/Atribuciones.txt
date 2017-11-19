@@ -1,11 +1,16 @@
 Realm667.com repository
 	Allied Marines Pack
+	Phantasm - MagicWazard
 	ZspecOPs - Ghastly-Dragon
-	Pyro imp
-	Zombie flyer (hovership)
-	Zombie plasma tank
-	Zombie missile tank
-	Zombie tank
+	Pyro imp - Dreadopp
+	Rail Bot - Captain Toenail
+	Zombie Railgunner - Tormentor667
+	Zombie flyer (hovership) - Tormentor667
+	Zombie plasma tank - Enjay
+	Zombie missile tank- Xim
+	Zombie tank - Enjay
+	Superdemon - Xim
+	Terminator - Vader
 	Stealth fighter
 	UAC Bot - Virtue
 	Crash (female marine) - Virtue
