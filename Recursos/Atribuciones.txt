@@ -1,27 +1,31 @@
-Realm667.com repository
-	Allied Marines Pack
-	Phantasm - MagicWazard
-	ZspecOPs - Ghastly-Dragon
-	Pyro imp - Dreadopp
-	Rail Bot - Captain Toenail
-	Zombie Railgunner - Tormentor667
-	Zombie flyer (hovership) - Tormentor667
-	Zombie plasma tank - Enjay
-	Zombie missile tank- Xim
-	Zombie tank - Enjay
-	Superdemon - Xim
-	Terminator - Vader
-	Stealth fighter
-	UAC Bot - Virtue
-	Crash (female marine) - Virtue
-	NailBorg, NailBorg Commando
-	Heaven Guard - Xaser
-	Heavy Chaingun - Eriance
-	Hellstorm Cannon - Ghastly_dragon
-	Pulse Rifle - ShadesMaster
-	UTNT Pyro Cannon - Ghastly dragon
-	Drone - Shadesmaster, Raven
-	Elite Guard - Enjay, Globe, Gothic
-	Dark Inquisitor - Ichor, Ghastly_Dragon
-	Prison Guard - Captain Toenail
-	Paladin - 
+Sprites
+	Realm667.com repository
+		Allied Marines Pack
+		Phantasm - MagicWazard
+		ZspecOPs - Ghastly-Dragon
+		Pyro imp - Dreadopp
+		Rail Bot - Captain Toenail
+		Zombie Railgunner - Tormentor667
+		Zombie flyer (hovership) - Tormentor667
+		Zombie plasma tank - Enjay
+		Zombie missile tank- Xim
+		Zombie tank - Enjay
+		Superdemon - Xim
+		Terminator - Vader
+		Stealth fighter
+		UAC Bot - Virtue
+		Crash (female marine) - Virtue
+		NailBorg, NailBorg Commando
+		Heaven Guard - Xaser
+		Heavy Chaingun - Eriance
+		Hellstorm Cannon - Ghastly_dragon
+		Pulse Rifle - ShadesMaster
+		UTNT Pyro Cannon - Ghastly dragon
+		Drone - Shadesmaster, Raven
+		Elite Guard - Enjay, Globe, Gothic
+		Dark Inquisitor - Ichor, Ghastly_Dragon
+		Prison Guard - Captain Toenail
+		Paladin - 
+
+Music
+	Alternate Dark Ambient Music Pack - Sergeant-mark-iv

@@ -1,0 +1,169 @@
+////////////////////////////////////////////////////
+//////////////// SPECTRE DEMON /////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Includes
+
+#include "Decorate/PlayerClasses/BaseEmpathyPlayer.txt"
+
+////////////////////////////////////////////////////
+////  Defines / Variables
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor SpectrePlayer : PlayerPawn
+{
+  Speed 0.8
+	Health 150
+	Radius 30
+	Height 56
+	Mass 400
+	PainChance 255
+	player.jumpz 8
+	player.maxhealth 150
+	player.soundclass "SpectrePlayerSnd"
+	player.morphweapon "SpectreJaws"
+	Player.ColorRange 0, 0
+	Player.DisplayName "Spectre Demon"
+	Player.StartItem "SpectreJaws"
+	Player.StartItem "PlayerIsDemon"
+	Player.StartItem "SpectreMana", 1000
+
+        Player.StartItem "BFG9000"		//all weapons are given to avoid autoswitch
+        Player.StartItem "Chaingun"		//when picking up them
+        Player.StartItem "Chainsaw"
+        Player.StartItem "Fist"
+        Player.StartItem "Pistol"
+        Player.StartItem "PlasmaRifle"
+        Player.StartItem "RocketLauncher"
+        Player.StartItem "Shotgun"
+        Player.StartItem "SuperShotgun"
+        
+	States
+	{
+	Spawn:
+		SARG A 7
+		SARG A 0 A_GiveInventory ("SpectreMana",ManaRegenBase)
+		SARG B 7
+		SARG B 0 A_GiveInventory ("SpectreMana",ManaRegenBase)
+		Loop
+	See:
+		SARG AABBCCDD 2
+		Loop
+	Melee:
+	Missile:
+		SARG EF 8
+ 		SARG G 8
+		Goto Spawn
+	Pain:
+		SARG H 2
+                SARG H 2 A_Pain
+		Goto Spawn
+	Death:
+		SARG I 8 A_PlayerSkinCheck("AltSkinDeath")
+		SARG J 8 A_PlayerScream
+		SARG K 4
+		SARG L 4 A_NoBlocking
+    		SARG M 4
+    		SARG N -1
+		Stop
+	XDeath:
+		goto death
+	AltSkinDeath:
+		SARG I 8
+    		SARG J 8 A_PlayerScream
+    		SARG K 4
+    		SARG L 4 A_NoBlocking
+    		SARG M 4
+    		SARG N -1
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+ 
+actor SpectreJaws : weapon
+{
+  radius 20
+  height 20
+  obituary "o% didn't see k% in time"
+  inventory.pickupmessage "Spectre!!"
+  attacksound ""
+  weapon.selectionorder 3000
+  weapon.kickback 400
+  weapon.ammotype1 "SpectreMana"
+  weapon.ammotype2 "SpectreMana"
+  weapon.ammouse1 0
+  weapon.ammouse2 200
+  weapon.ammogive 0
+  +WEAPON.NOALERT
+  +WEAPON.DONTBOB
+  +WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      DEMH A -1	//the deselect state is an infinite static loop to avoid horns to  disappear after death
+      LOOP	//a little crappy, but produces a quite good effect (no need to say the danger of allowing weapon switch)
+    Select:
+      DEMH A 1
+      goto ready
+    Ready: 
+      DEMH A 7 A_WeaponReady
+      DEMH A 0 A_GiveInventory ("SpectreMana",ManaRegenBase)
+      LOOP
+    Fire:
+      DEMH A 16	A_PlaySoundEx ("demon/melee", "Weapon")
+      DEMH A 8 A_CustomPunch (5)
+      DEMH A 8
+      DEMH A 8 A_ReFire
+      Goto Ready
+    AltFire:
+      DEMH A 0 A_JumpIfNoAmmo ("fire")
+      DEMH A 0 A_PlaySoundEx ("demon/sight", "Weapon")
+      DEMH A 0 A_GiveInventory ("SpectreShadowmeld",1)
+      DEMH A 0 A_TakeInventory ("SpectreMana",200)
+      DEMH A 24
+      goto ready
+  }
+}
+
+actor SpectreShadowmeld : PowerupGiver
+{
+  inventory.pickupmessage ""
+  powerup.color blue 0.25
+  inventory.maxamount 0
+  powerup.type "Invisibility"
+  powerup.duration 2100
+  +AUTOACTIVATE
+  +INVENTORY.ALWAYSPICKUP
+  states
+  {
+    Spawn:
+      TNT1 A 1
+      loop
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor SpectreMana : ammo
+{
+  inventory.amount 50
+  inventory.maxamount 1000
+  inventory.icon "MANAA0"
+  RENDERSTYLE TRANSLUCENT
+  ALPHA 0.5
+  states
+  {
+    Spawn:
+      MANA ABC 5
+      loop
+  }
+}

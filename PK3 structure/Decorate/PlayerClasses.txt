@@ -1,1 +1,3 @@
-#include "Decorate/PlayerClasses/BloodImp.txt"
+#include "Decorate/PlayerClasses/BloodImpPlayer.txt"
+#include "Decorate/PlayerClasses/DemonPlayer.txt
+#include "Decorate/PlayerClasses/SpectrePlayer.txt"

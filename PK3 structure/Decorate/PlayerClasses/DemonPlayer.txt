@@ -1,0 +1,159 @@
+////////////////////////////////////////////////////
+/////////////////// PINKY DEMON ////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Includes
+
+#include "Decorate/PlayerClasses/BaseEmpathyPlayer.txt"
+
+////////////////////////////////////////////////////
+////  Defines / Variables
+
+const float DemonMaxRage = 100;
+const float DemonPainRageGain = 10;
+//const string DemonSolidStrikePuff = "BulletPuff";
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor DemonPlayer : BaseEmpathyPlayer
+{
+  Speed 1.2
+	Health 200 //150
+	Radius 30
+	Height 56
+	Mass 400
+	PainChance 255
+	player.JumpZ 8
+	player.maxhealth 200 //150
+	player.soundclass "DemonPlayerSnd"
+	player.morphweapon "DemonJaws"
+	Player.ColorRange 0, 0
+	Player.DisplayName "\"Pinky\" Demon"
+	Player.StartItem "DemonJaws"
+	Player.StartItem "PlayerIsDemon"
+	Player.StartItem "DemonRageMana", 0
+        
+	States
+	{
+	Spawn:
+		SARG A 7
+		//SARG A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+		SARG B 7
+		//SARG B 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+		Loop
+	See:
+		SARG AABBCCDD 2
+		Loop
+	Melee:
+	Missile:
+		SARG EF 8
+ 		SARG G 8
+		Goto Spawn
+	Pain:
+		SARG H 2 A_GiveInventory("DemonRageMana", DemonPainRageGain)
+    SARG H 2 A_Pain
+		Goto Spawn
+	Death:
+		SARG I 8 A_PlayerSkinCheck("AltSkinDeath")
+		SARG J 8 A_PlayerScream
+		SARG K 4
+		SARG L 4 A_NoBlocking
+    		SARG M 4
+    		SARG N -1
+		Stop
+	XDeath:
+		goto death
+	AltSkinDeath:
+		SARG I 8
+    		SARG J 8 A_PlayerScream
+    		SARG K 4
+    		SARG L 4 A_NoBlocking
+    		SARG M 4
+    		SARG N -1
+		Stop
+	}
+}
+ 
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+
+actor DemonJaws : weapon
+{
+  radius 20
+  height 20
+  obituary "k% nibbled o%!"
+  inventory.pickupmessage "Demon!!"
+  attacksound ""
+  weapon.selectionorder 3000
+  weapon.kickback 300
+  weapon.ammotype1 "DemonRageMana"
+  weapon.ammotype2 "DemonRageMana"
+  weapon.ammouse1 -3
+  weapon.ammouse2 1
+  weapon.ammogive 0
+  +WEAPON.DONTBOB
+  +WEAPON.AMMO_OPTIONAL
+  //+WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      DEMH A -1	//the deselect state is an infinite static loop to avoid horns to  disappear after death
+      loop	//a little crappy, but produces a quite good effect (no need to say the danger of allowing weapon switch)
+
+    Select:
+      DEMH A 1
+      goto ready
+
+    Ready: 
+      DEMH A 7 A_WeaponReady
+      //DEMH A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+      loop
+
+    Fire:
+      DEMH A 16	A_PlaySoundEx ("demon/melee", "Weapon")
+      DEMH A 8 A_CustomPunch (5, false, (CPF_USEAMMO | CPF_PULLIN), "BulletPuff", 80, 0.0)
+      DEMH A 8
+      DEMH A 0 { 
+        If (A_JumpIfInventory("DemonRageMana", (DemonMaxRage + 1), "Null"))  //if above maximum ammo, reset ammo count before proceeding
+        {
+          A_TakeInventory("DemonRageMana", 0x7fffffff);
+          A_GiveInventory("DemonRageMana", DemonMaxRage);
+        }
+      }
+      DEMH A 8 A_ReFire
+      goto Ready
+
+    AltFire:
+      DEMH A 0 A_JumpIfNoAmmo ("fire")
+      DEMH A 2 A_PlaySoundEx ("demon/melee", "Weapon")
+      DEMH A 2 A_CustomPunch (3, false, (CPF_USEAMMO | CPF_PULLIN), "BulletPuff", 80, 0.25)
+      DEMH A 2
+      DEMH A 1 A_ReFire
+      goto ready
+
+      ResetAmmo:
+      IMPW E 0 A_TakeInventory("BloodImpMana", 0x7fffffff)
+      IMPW E 0 A_GiveInventory("BloodImpMana", BloodImpBurstSize)
+  }
+}
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor DemonRageMana : ammo
+{
+  inventory.amount 0
+  inventory.maxamount 100
+  inventory.icon "SARGA0"
+  RENDERSTYLE TRANSLUCENT
+  ALPHA 0.5
+  states
+  {
+    Spawn:
+      SARG AB 5
+      loop
+  }
+}

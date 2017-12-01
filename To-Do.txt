@@ -1,1 +1,6 @@
-- Las armas no inmobilizan correctamente (no se encuentra el script)
+Features
+- interfaces personalizadas
+	- rostros interfaz
+
+Fixes
+- no carga titlemap ni titlemus
