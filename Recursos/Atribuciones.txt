@@ -1,5 +1,6 @@
 Sprites
-	Realm667.com repository
+  Realm667.com repository
+	Creatures
 		Allied Marines Pack
 		Phantasm - MagicWazard
 		ZspecOPs - Ghastly-Dragon
@@ -26,6 +27,9 @@ Sprites
 		Dark Inquisitor - Ichor, Ghastly_Dragon
 		Prison Guard - Captain Toenail
 		Paladin - 
+
+	Props
+		Lanterns - Jimmy
 
 Music
 	Alternate Dark Ambient Music Pack - Sergeant-mark-iv

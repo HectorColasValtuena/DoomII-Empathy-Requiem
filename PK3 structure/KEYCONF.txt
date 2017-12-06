@@ -4,8 +4,9 @@ addplayerclass BloodImpPlayer
 addplayerclass DemonPlayer
 addplayerclass SpectrePlayer
 //addplayerclass ImpPlayer
-addplayerclass FastoPlayer
 addplayerclass RevenantPlayer
+addplayerclass KnightPlayer
+addplayerclass FastoPlayer
 addplayerclass CacodemonPlayer
 addplayerclass PainElementalPlayer
 addplayerclass ArachnotronPlayer
@@ -14,9 +15,10 @@ addplayerclass SpiderMastermindPlayer
 addplayerclass CyberdemonPlayer
 addplayerclass ArchVilePlayer
 
+
 weaponsection EmpathyWeaponry
 
-setslot 1 BaronArm DemonJaws SpectreJaws ImpArm BloodImpArm MancubusArms CacodemonMouth PainMouth 
+setslot 1 KnightArm BaronArm DemonJaws SpectreJaws ImpArm BloodImpArm MancubusArms CacodemonMouth PainMouth 
 setslot 2 ArachnotronRifle RevenantCanons SpiderChaingun CyberdemonCanon ArchVilePower
 setslot 3
 setslot 4

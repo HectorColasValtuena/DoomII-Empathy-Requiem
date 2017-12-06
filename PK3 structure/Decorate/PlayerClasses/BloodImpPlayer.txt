@@ -5,13 +5,13 @@
 ////////////////////////////////////////////////////
 ////  Includes
 
-#include "Decorate/PlayerClasses/BaseEmpathyPlayer.txt"
+//#include "Decorate/PlayerClasses/BaseEmpathyPlayer.txt"
 
 
 ////////////////////////////////////////////////////
 ////  Defines / Variables
 
-const float BloodImpBurstSize = 12;
+const int BloodImpBurstSize = 12;
 const float BloodImpBurstSpread = 3;
 
 ////////////////////////////////////////////////////
@@ -21,11 +21,11 @@ actor BloodImpPlayer : BaseEmpathyPlayer
 {
   Speed 1.2      //Speed 0.4861
   Health 75  //60
-  Radius 10 //20
+  Radius 8 //20
   Height 28 //56
   Mass 50
   PainChance 255
-  player.JumpZ 12.0 //8.0
+  player.JumpZ 16.0 //8.0
   player.viewheight 24
   player.maxhealth 75
   player.soundclass "ImpPlayer"
@@ -113,7 +113,6 @@ actor BloodImpArm : weapon
   weapon.ammotype2 "BloodImpMana"
   weapon.ammouse1 1
   weapon.ammouse2 -3
-  //weapon.ammogive BloodImpBurstSize
   +WEAPON.NOAUTOAIM
   //+WEAPON.AMMO_OPTIONAL
   +WEAPON.ALT_AMMO_OPTIONAL
@@ -134,8 +133,12 @@ actor BloodImpArm : weapon
       LOOP
 
     Fire:
-      IMPW A 0 A_JumpIfNoAmmo ("AltFire")
+      IMPW A 0 A_JumpIfNoAmmo ("FireFizzle")
       goto FireBurstStart
+
+    FireFizzle:
+      IMPW A 8 A_PlaySoundEx ("imp/active", "Weapon")
+      goto Ready
 
     FireBurstStart:
       IMPW F 2
@@ -165,14 +168,15 @@ actor BloodImpArm : weapon
 //A_CustomPunch (int damage [, bool norandom [, int flags [, string pufftype [, float range [, float lifesteal [, int lifestealmax [, string armorbonustype [, sound meleesound [, sound misssound]]]]]]]]])
     AltFire:
       IMPW BC 3
-      IMPW D 3 A_CustomPunch (1) //, false, (CPF_STEALARMOR), BulletPuff, true, 0, )
-      IMPW E 3
-      IMPW E 0 { //if above maximum ammo, reset ammo count before proceeding
+      IMPW D 3 {
+        A_CustomPunch (1); //, false, (CPF_STEALARMOR), BulletPuff, true, 0, )
+        //if above maximum ammo, reset ammo count before proceeding
         If (A_JumpIfInventory("BloodImpMana", (BloodImpBurstSize + 1), "Null")) {
           A_TakeInventory("BloodImpMana", 0x7fffffff);
           A_GiveInventory("BloodImpMana", BloodImpBurstSize);
         }
       }
+      IMPW E 3
       TNT1 A 3 A_ReFire
       IMPW J 3
       goto Ready

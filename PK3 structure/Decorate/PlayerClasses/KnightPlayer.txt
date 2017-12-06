@@ -1,0 +1,200 @@
+////////////////////////////////////////////////////
+////////////////// BARON OF HELL ///////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Defines / Variables
+
+const int HellKnightMaxMana = 6;
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor KnightPlayer : BaseEmpathyPlayer
+{
+  Speed 0.64
+	Health 500
+	Radius 24
+	Height 64
+	Mass 1000
+	PainChance 255
+	player.jumpz 9
+	player.viewheight 48
+	player.maxhealth 1000
+	player.soundclass "BaronPlayerSnd"
+	player.morphweapon "KnightArm"
+	Player.ColorRange 0, 0
+	Player.DisplayName "HellKnight"
+	Player.StartItem "KnightArm"
+	Player.StartItem "PlayerIsKnight"
+	Player.StartItem "HellKnightMana", 6
+        
+	States
+	{
+  	Spawn:
+  		BOS2 AB 7
+  		Loop
+
+  	See:
+  		BOS2 AABBCCDD 3 
+  		Loop
+
+  	Missile:
+  		BOS2 EF 6
+   		BOS2 G 6
+  		Goto Spawn
+
+  	Melee:
+  		BOS2 EF 6
+   		BOS2 G 6
+  		Goto Spawn
+
+  	Pain:
+  		BOS2 H 4
+      BOS2 H 4 A_Pain
+  		Goto Spawn
+
+  	Death:
+  		BOS2 I 8 A_PlayerSkinCheck("AltSkinDeath")
+  		BOS2 J 8 A_PlayerScream
+  		BOS2 K 8
+      BOS2 L 8 A_NoBlocking
+      BOS2 MN 8
+      BOS2 O -1
+  		Stop
+
+  	XDeath:
+  		goto death
+
+  	AltSkinDeath:
+  		BOS2 I 8
+  		BOS2 J 8 A_PlayerScream
+  		BOS2 K 8
+      BOS2 L 8 A_NoBlocking
+      BOS2 MN 8
+      BOS2 O -1
+  		Stop
+	}
+}
+
+
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+
+actor KnightArm : weapon
+{
+  radius 20
+  height 20
+  obituary "%o was bruised to death by k%"
+  inventory.pickupmessage "Knight might!"
+  attacksound "baron/melee"
+  weapon.selectionorder 5000
+  weapon.kickback 500
+  weapon.ammotype "HellKnightMana"
+  weapon.ammouse1 1
+  weapon.ammouse2 -2
+  weapon.ammogive 6
+  //+WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      KNIW A 1 A_Lower 
+      LOOP
+
+    Select: 
+      KNIW A 1 A_Raise 
+      LOOP
+
+    Ready: 
+      KNIW A 36 A_WeaponReady
+      KNIW A 0 A_GiveInventory ("HellKnightMana", 1)
+      LOOP
+
+    Fire:
+      KNIW A 0 A_JumpIfNoAmmo ("FireFizzle")
+      KNIW B 4
+      KNIW C 4 bright A_GunFlash
+      KNIW D 4 bright A_FireCustomMisSile ("KnightPlayerBall")
+      KNIW E 4
+      TNT1 A 2
+      TNT1 A 4 A_ReFire
+      KNIW J 4 
+      Goto Ready
+
+    FireFizzle:
+      IMPW A 8 A_PlaySoundEx ("baron/active", "Weapon")
+      goto Ready
+
+    Flash:
+      TNT1 A 4
+      TNT1 A 4 bright A_Light1
+      TNT1 A 0 A_Light0
+      stop
+
+    AltFire:
+      KNIW FG 4
+      KNIW H 4 {
+        A_CustomPunch (5); //baron's original is 10
+        //if above maximum ammo, reset ammo count before proceeding
+        If (A_JumpIfInventory("HellKnightMana", (HellKnightMaxMana + 1), "Null")) {
+          A_TakeInventory("HellKnightMana", 0x7fffffff);
+          A_GiveInventory("HellKnightMana", HellKnightMaxMana);
+        }
+      }
+      KNIW I 4
+      TNT1 A 2
+      TNT1 A 4 A_ReFire
+      KNIW J 5
+      goto ready
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Projectile actor class
+
+actor KnightPlayerBall : BaronBall
+{
+  Radius 6
+  Height 12
+  Speed 20
+  FastSpeed 20
+  Damage (8 * random(1, 4))
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 0.5
+  Scale 0.5
+  SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+
+  States
+  {
+    Spawn:
+      BAL7 AB 4 Bright
+      Loop
+    Death:
+      BAL7 CDE 6 Bright
+      Stop
+  }
+}
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor HellKnightMana : ammo
+{
+  inventory.amount 6
+  inventory.maxamount 6
+  inventory.icon "BAL7A0"
+  RENDERSTYLE TRANSLUCENT
+  ALPHA 0.5
+  states
+  {
+    Spawn:
+      BAL7 CCDDE 7
+      loop
+  }
+}
