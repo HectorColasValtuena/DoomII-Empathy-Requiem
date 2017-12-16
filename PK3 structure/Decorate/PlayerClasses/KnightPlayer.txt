@@ -12,7 +12,7 @@ const int HellKnightMaxMana = 6;
 
 actor KnightPlayer : BaseEmpathyPlayer
 {
-  Speed 0.64
+  Speed 0.8
 	Health 500
 	Radius 24
 	Height 64
@@ -20,6 +20,7 @@ actor KnightPlayer : BaseEmpathyPlayer
 	PainChance 255
 	player.jumpz 9
 	player.viewheight 48
+  player.attackZOffset 12
 	player.maxhealth 500
 	player.soundclass "BaronPlayerSnd"
 	player.morphweapon "KnightArm"
@@ -90,9 +91,10 @@ actor KnightArm : weapon
   attacksound "baron/melee"
   weapon.selectionorder 5000
   weapon.kickback 500
-  weapon.ammotype "HellKnightMana"
+  weapon.ammotype1 "HellKnightMana"
+  weapon.ammotype2 "HellKnightMana"
   weapon.ammouse1 1
-  weapon.ammouse2 -2
+  weapon.ammouse2 -1
   weapon.ammogive 6
   //+WEAPON.AMMO_OPTIONAL
   +WEAPON.ALT_AMMO_OPTIONAL
@@ -124,7 +126,7 @@ actor KnightArm : weapon
       Goto Ready
 
     FireFizzle:
-      IMPW A 8 A_PlaySoundEx ("baron/active", "Weapon")
+      KNIW A 8 A_PlaySoundEx ("baron/active", "Weapon")
       goto Ready
 
     Flash:
@@ -157,15 +159,15 @@ actor KnightArm : weapon
 
 actor KnightPlayerBall : BaronBall
 {
-  Radius 6
-  Height 12
+  Radius 5
+  Height 10
   Speed 20
   FastSpeed 20
-  Damage (8 * random(1, 4))
+  Damage (8 * random(1, 4)) //original is 8 * random(1,8)
   Projectile
   +RANDOMIZE
   RenderStyle Add
-  Alpha 0.5
+  Alpha 0.65
   Scale 0.5
   SeeSound "baron/attack"
   DeathSound "baron/shotx"

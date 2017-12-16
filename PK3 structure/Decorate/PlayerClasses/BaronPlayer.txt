@@ -1,0 +1,289 @@
+////////////////////////////////////////////////////
+////////////////// BARON OF HELL ///////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Defines / Variables
+
+const int BaronBaseMaxMana = 8;
+const int BaronStrongAttMinMana = 12;
+const int BaronMegaAttMinMana = 24;
+
+const float BaronBurstSpread = 4.5;
+
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor BaronPlayer : PlayerPawn
+{
+  Speed 0.8
+	Health 1000
+	Radius 24
+	Height 64
+	Mass 1000
+	PainChance 255
+	player.jumpz 9
+	player.viewheight 48
+  player.attackZOffset 12
+	player.maxhealth 1000
+	player.soundclass "BaronPlayerSnd"
+	player.morphweapon "BaronArm"
+	Player.ColorRange 0, 0
+	Player.DisplayName "Baron of Hell"
+	Player.StartItem "BaronArm"
+	Player.StartItem "PlayerIsBaron"
+	Player.StartItem "BaronMana", 6
+
+        Player.StartItem "BFG9000"		//all weapons are given to avoid autoswitch
+        Player.StartItem "Chaingun"		//when picking up them
+        Player.StartItem "Chainsaw"
+        Player.StartItem "Fist"
+        Player.StartItem "Pistol"
+        Player.StartItem "PlasmaRifle"
+        Player.StartItem "RocketLauncher"
+        Player.StartItem "Shotgun"
+        Player.StartItem "SuperShotgun"
+        
+	States
+	{
+	Spawn:
+		BOSS A 7
+		BOSS A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+		BOSS B 7
+		BOSS A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+		Loop
+	See:
+		BOSS AABBCCDD 3 
+		Loop
+	Missile:
+		BOSS EF 8
+ 		BOSS G 8
+		Goto Spawn
+	Melee:
+		BOSS EF 8
+ 		BOSS G 8
+		Goto Spawn
+	Pain:
+		BOSS H 4
+    		BOSS H 4 A_Pain
+		Goto Spawn
+	Death:
+		BOSS I 8 A_PlayerSkinCheck("AltSkinDeath")
+		BOSS J 8 A_PlayerScream
+		BOSS K 8
+    		BOSS L 8 A_NoBlocking
+    		BOSS MN 8
+    		BOSS O -1
+		Stop
+	XDeath:
+		goto death
+	AltSkinDeath:
+		BOSS I 8
+		BOSS J 8 A_PlayerScream
+		BOSS K 8
+    		BOSS L 8 A_NoBlocking
+    		BOSS MN 8
+    		BOSS O -1
+		Stop
+	}
+}
+
+
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+
+actor BaronArm : weapon
+{
+  radius 20
+  height 20
+  obituary "%o was bruised to death by k%"
+  inventory.pickupmessage "Baron domination!"
+  attacksound "baron/melee"
+  weapon.selectionorder 5000
+  weapon.kickback 500
+  weapon.ammotype1 "BaronMana"
+  weapon.ammotype2 "BaronMana"
+  weapon.ammouse1 1
+  weapon.ammouse2 -1
+  weapon.ammogive 6
+  +WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      BARW A 1 A_Lower 
+      LOOP
+
+    Select: 
+      BARW A 1 A_Raise 
+      LOOP
+
+    Ready: 
+      BARW A 36 A_WeaponReady
+      BARW A 0 A_GiveInventory ("BaronMana", 1)
+      LOOP
+
+    Fire:
+      BARW B 4
+      BARW C 4 bright A_GunFlash
+      BARW D 0 bright A_JumpIfInventory ("BaronMana", BaronMegaAttMinMana, "MegaAttack")  //If we have a full mana pool, perform a mega attack
+      BARW D 0 bright A_JumpIfInventory ("BaronMana", BaronStrongAttMinMana, "StrongAttack")  //if not but still over strong attack threshold, perform a strong attack
+      BARW D 0 bright A_JumpIfInventory ("BaronMana", 2, "BurstAttack")    //if we have more than 1 mana, perform a burst attack
+      goto SingleAttack   //if 1 or 0 mana left, perform a single fireball attack
+
+    SingleAttack:
+      BARW D 0 bright A_FireCustomMisSile ("BaronPlayerSmallBall")
+      goto FinishFire
+
+    BurstAttack:
+      BARW D 0 bright {
+        while (!(A_JumpIfNoAmmo("null"))) { //while NOT out of ammo shoot again
+          A_FireProjectile ("BaronPlayerSmallBall", frandom(-BaronBurstSpread, BaronBurstSpread));
+        }
+      }
+      goto FinishFire
+
+    StrongAttack:
+      goto FinishFire
+
+    MegaAttack:
+      goto FinishFire
+
+    FinishFire:
+      BARW D 4 bright
+      BARW E 4
+      TNT1 A 2
+      TNT1 A 4 A_ReFire
+      BARW J 4 
+      goto Ready
+
+    FireFizzle:
+      BARW A 8 A_PlaySoundEx ("baron/active", "Weapon")
+      goto Ready
+
+    Flash:
+      TNT1 A 4
+      TNT1 A 4 bright A_Light1
+      TNT1 A 0 A_Light0
+      stop
+
+    AltFire:
+      BARW FG 4
+      BARW H 4 {
+        A_CustomPunch (10); //baron's original is 10
+        //if above maximum ammo, reset ammo count before proceeding
+        If (A_JumpIfInventory("BaronMana", (BaronMegaAttMinMana + 1), "Null")) {
+          A_TakeInventory("BaronMana", 0x7fffffff);
+          A_GiveInventory("BaronMana", BaronMegaAttMinMana);
+        }
+      }
+      BARW I 4
+      TNT1 A 2
+      TNT1 A 4 A_ReFire
+      BARW J 5
+      goto ready
+  }
+}
+/*
+actor BaronArm : weapon
+{
+  radius 20
+  height 20
+  obituary "%o ate some k%'s green Baron plasma"
+  inventory.pickupmessage "Feel the power of a Baron of Hell"
+  attacksound "baron/melee"
+  weapon.selectionorder 5000
+  weapon.kickback 500
+  weapon.ammotype "MonsterMana"
+  weapon.ammouse1 40
+  weapon.ammouse2 0
+  weapon.ammogive 500
+  +WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      BARW A 1 A_Lower 
+      LOOP 
+    Select: 
+      BARW A 1 A_Raise 
+      LOOP
+    Ready: 
+      BARW A 7 A_WeaponReady
+      BARW A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
+      LOOP
+    Fire:
+      BARW A 0 A_JumpIfNoAmmo ("AltFire")
+      BARW B 5
+      BARW C 5 A_GunFlash
+      BARW D 5 A_FireCustomMisSile ("BaronBall")
+      BARW E 5
+      TNT1 A 5 A_ReFire
+      BARW J 5 
+      Goto Ready
+    Flash:
+      TNT1 A 5
+      TNT1 A 5 bright A_Light1
+      TNT1 A 0 A_Light0
+      stop
+    AltFire:
+      BARW FG 5
+      BARW H 5 A_CustomPunch (10)
+      BARW I 5
+      TNT1 A 5 A_ReFire
+      BARW J 5
+      goto ready
+  }
+}
+*/
+
+////////////////////////////////////////////////////
+////  Projectile actor class
+
+actor BaronPlayerSmallBall : BaronBall
+{
+  Radius 6
+  Height 12
+  Speed 20
+  FastSpeed 20
+  Damage (8) //original is 8 * random(1,8)
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 0.75
+  Scale 0.75
+  SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+
+  States
+  {
+    Spawn:
+      BAL7 AB 4 Bright
+      Loop
+    Death:
+      BAL7 CDE 6 Bright
+      Stop
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor BaronMana : ammo
+{
+  inventory.amount 6
+  inventory.maxamount 6
+  inventory.icon "BAL7A0"
+  RENDERSTYLE TRANSLUCENT
+  ALPHA 0.5
+  states
+  {
+    Spawn:
+      BAL7 CCDDE 7
+      loop
+  }
+}
