@@ -142,7 +142,7 @@ actor BaronArm : weapon
 /////////////////// MANCUBUS ///////////////////////
 ////////////////////////////////////////////////////
 
-actor FastoPlayer : PlayerPawn
+actor FatsoPlayer : PlayerPawn
 {
         Speed 0.3645833
 	Health 600
@@ -1600,6 +1600,7 @@ actor EmpathicStrength : PowerupGiver
   }
 }
 
+/*
 actor PlayerMonsterClassDefiner : inventory //this will be used to identify wich class the player is,
 {				 // this shouldn't be used directly, but inherited with the desired name
   inventory.amount 1
@@ -1613,18 +1614,20 @@ actor PlayerMonsterClassDefiner : inventory //this will be used to identify wich
 
 
 //This inventory items are done to let the health bonus to check the player class
-actor PlayerIsBaron : PlayerMonsterClassDefiner {}
-actor PlayerIsDemon : PlayerMonsterClassDefiner {}
 actor PlayerIsBloodImp : PlayerMonsterClassDefiner {}
-actor PlayerIsFatso : PlayerMonsterClassDefiner {}
+actor PlayerIsDemon : PlayerMonsterClassDefiner {}
+actor PlayerIsSpectre : PlayerMonsterClassDefiner {}
+actor PlayerIsRevenant : PlayerMonsterClassDefiner {}
+actor PlayerIsKnight : PlayerMonsterClassDefiner {}
 actor PlayerIsCacodemon : PlayerMonsterClassDefiner {}
 actor PlayerIsPainElemental : PlayerMonsterClassDefiner {}
+actor PlayerIsFatso : PlayerMonsterClassDefiner {}
 actor PlayerIsArachnotron : PlayerMonsterClassDefiner {}
-actor PlayerIsRevenant : PlayerMonsterClassDefiner {}
+actor PlayerIsBaron : PlayerMonsterClassDefiner {}
+actor PlayerIsArchvile : PlayerMonsterClassDefiner {}
 actor PlayerIsSpiderMastermind : PlayerMonsterClassDefiner {}
 actor PlayerIsCyberdemon : PlayerMonsterClassDefiner {}
-actor PlayerIsArchvile : PlayerMonsterClassDefiner {}
-
+*/
 actor PlayerIsImp : PlayerMonsterClassDefiner {}
 
 actor BaronHealthBonus 		: HealthBonus { Inventory.MaxAmount 2000 }

@@ -31,5 +31,8 @@ Sprites
 	Props
 		Lanterns - Jimmy
 
+	Weapons
+		Mancubus Arm - Xim
+		Plasma Repeater - BadMojo
 Music
 	Alternate Dark Ambient Music Pack - Sergeant-mark-iv

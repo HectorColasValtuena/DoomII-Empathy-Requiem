@@ -43,7 +43,7 @@ actor SpectrePlayer : BaseEmpathyPlayer
 	Player.ColorRange 0, 0
 	Player.DisplayName "Spectre Demon"
 	Player.StartItem "SpectreJaws"
-	Player.StartItem "PlayerIsDemon"
+	Player.StartItem "PlayerIsSpectre"
 	Player.StartItem "SpectreMana", 525
         
 	States

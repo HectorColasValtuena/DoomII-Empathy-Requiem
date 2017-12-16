@@ -1,0 +1,26 @@
+actor PlayerMonsterClassDefiner : inventory //this will be used to identify wich class the player is,
+{				 // this shouldn't be used directly, but inherited with the desired name
+  inventory.amount 1
+  inventory.maxamount 1
+  +INVENTORY.QUIET
+  +INVENTORY.UNDROPPABLE
+  //+INVENTORY.HUBPOWER
+  +INVENTORY.ALWAYSPICKUP
+  +INVENTORY.IGNORESKILL
+}
+
+
+//This inventory items are done to let the health bonus to check the player class
+actor PlayerIsBloodImp : PlayerMonsterClassDefiner {}
+actor PlayerIsDemon : PlayerMonsterClassDefiner {}
+actor PlayerIsSpectre : PlayerMonsterClassDefiner {}
+actor PlayerIsRevenant : PlayerMonsterClassDefiner {}
+actor PlayerIsKnight : PlayerMonsterClassDefiner {}
+actor PlayerIsCacodemon : PlayerMonsterClassDefiner {}
+actor PlayerIsPainElemental : PlayerMonsterClassDefiner {}
+actor PlayerIsFatso : PlayerMonsterClassDefiner {}
+actor PlayerIsArachnotron : PlayerMonsterClassDefiner {}
+actor PlayerIsBaron : PlayerMonsterClassDefiner {}
+actor PlayerIsArchvile : PlayerMonsterClassDefiner {}
+actor PlayerIsSpiderMastermind : PlayerMonsterClassDefiner {}
+actor PlayerIsCyberdemon : PlayerMonsterClassDefiner {}

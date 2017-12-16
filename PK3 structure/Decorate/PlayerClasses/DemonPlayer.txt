@@ -87,7 +87,7 @@ actor DemonJaws : weapon
   inventory.pickupmessage "Demon!!"
   attacksound ""
   weapon.selectionorder 3000
-  weapon.kickback 300
+  weapon.kickback 200
   weapon.ammotype1 "DemonRageMana"
   weapon.ammotype2 "DemonRageMana"
   weapon.ammouse1 -3
