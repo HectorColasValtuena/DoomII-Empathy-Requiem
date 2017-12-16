@@ -90,7 +90,7 @@ actor KnightArm : weapon
   inventory.pickupmessage "Knight might!"
   attacksound "baron/melee"
   weapon.selectionorder 5000
-  weapon.kickback 500
+  weapon.kickback 150
   weapon.ammotype1 "HellKnightMana"
   weapon.ammotype2 "HellKnightMana"
   weapon.ammouse1 1

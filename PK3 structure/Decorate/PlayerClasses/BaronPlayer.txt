@@ -11,6 +11,8 @@ const int BaronMegaAttMinMana = 24;
 
 const float BaronBurstSpread = 4.5;
 
+const float BaronSmallHellfireDamage = 1; //dealt once each 2 ticks, ~18 times per second
+const float BaronLargeHellfireDamage = 6;
 
 ////////////////////////////////////////////////////
 ////  Player actor class
@@ -101,11 +103,11 @@ actor BaronArm : weapon
   inventory.pickupmessage "Baron domination!"
   attacksound "baron/melee"
   weapon.selectionorder 5000
-  weapon.kickback 500
+  weapon.kickback 250
   weapon.ammotype1 "BaronMana"
   weapon.ammotype2 "BaronMana"
   weapon.ammouse1 1
-  weapon.ammouse2 -1
+  weapon.ammouse2 -2
   weapon.ammogive 6
   +WEAPON.AMMO_OPTIONAL
   +WEAPON.ALT_AMMO_OPTIONAL
@@ -122,7 +124,12 @@ actor BaronArm : weapon
 
     Ready: 
       BARW A 36 A_WeaponReady
-      BARW A 0 A_GiveInventory ("BaronMana", 1)
+      BARW A 0 {  //regenerate 1 mana each second if not above maximum base reserve 
+        If (!A_JumpIfInventory("BaronMana", BaronBaseMaxMana, "Null")) {
+          A_GiveInventory("BaronMana", 1);  
+        }
+      }
+      //BARW A 0 A_GiveInventory ("BaronMana", 1)
       LOOP
 
     Fire:
@@ -146,9 +153,28 @@ actor BaronArm : weapon
       goto FinishFire
 
     StrongAttack:
+      BARW D 0 bright {
+        if (A_JumpIfInventory("BaronMana", 23, "Null")) { A_FireProjectile("BaronPlayerStrongBall23"); }
+        else if (A_JumpIfInventory("BaronMana", 22, "Null")) { A_FireProjectile("BaronPlayerStrongBall22"); }
+        else if (A_JumpIfInventory("BaronMana", 21, "Null")) { A_FireProjectile("BaronPlayerStrongBall21"); }
+        else if (A_JumpIfInventory("BaronMana", 20, "Null")) { A_FireProjectile("BaronPlayerStrongBall20"); }
+        else if (A_JumpIfInventory("BaronMana", 19, "Null")) { A_FireProjectile("BaronPlayerStrongBall19"); }
+        else if (A_JumpIfInventory("BaronMana", 18, "Null")) { A_FireProjectile("BaronPlayerStrongBall18"); }
+        else if (A_JumpIfInventory("BaronMana", 17, "Null")) { A_FireProjectile("BaronPlayerStrongBall17"); }
+        else if (A_JumpIfInventory("BaronMana", 16, "Null")) { A_FireProjectile("BaronPlayerStrongBall16"); }
+        else if (A_JumpIfInventory("BaronMana", 15, "Null")) { A_FireProjectile("BaronPlayerStrongBall15"); }
+        else if (A_JumpIfInventory("BaronMana", 14, "Null")) { A_FireProjectile("BaronPlayerStrongBall14"); }
+        else if (A_JumpIfInventory("BaronMana", 13, "Null")) { A_FireProjectile("BaronPlayerStrongBall13"); }
+        else { A_FireProjectile("BaronPlayerStrongBall12"); }
+        A_TakeInventory("BaronMana", 0x7fffffff);
+      }
       goto FinishFire
 
     MegaAttack:
+      BARW D 0 bright {
+        A_FireProjectile("BaronPlayerMegaBall");
+        A_TakeInventory("BaronMana", 0x7fffffff);
+      }
       goto FinishFire
 
     FinishFire:
@@ -172,7 +198,8 @@ actor BaronArm : weapon
     AltFire:
       BARW FG 4
       BARW H 4 {
-        A_CustomPunch (10); //baron's original is 10
+        //A_CustomPunch (10); //baron's original is 10
+        A_CustomPunch (10, false, (CPF_USEAMMO | CPF_PULLIN | CPF_STEALARMOR), "BulletPuff", 80, 0.25, 0, "BaronArmorRune");
         //if above maximum ammo, reset ammo count before proceeding
         If (A_JumpIfInventory("BaronMana", (BaronMegaAttMinMana + 1), "Null")) {
           A_TakeInventory("BaronMana", 0x7fffffff);
@@ -186,59 +213,6 @@ actor BaronArm : weapon
       goto ready
   }
 }
-/*
-actor BaronArm : weapon
-{
-  radius 20
-  height 20
-  obituary "%o ate some k%'s green Baron plasma"
-  inventory.pickupmessage "Feel the power of a Baron of Hell"
-  attacksound "baron/melee"
-  weapon.selectionorder 5000
-  weapon.kickback 500
-  weapon.ammotype "MonsterMana"
-  weapon.ammouse1 40
-  weapon.ammouse2 0
-  weapon.ammogive 500
-  +WEAPON.AMMO_OPTIONAL
-  +WEAPON.ALT_AMMO_OPTIONAL
-  
-  States
-  {
-    Deselect: 
-      BARW A 1 A_Lower 
-      LOOP 
-    Select: 
-      BARW A 1 A_Raise 
-      LOOP
-    Ready: 
-      BARW A 7 A_WeaponReady
-      BARW A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
-      LOOP
-    Fire:
-      BARW A 0 A_JumpIfNoAmmo ("AltFire")
-      BARW B 5
-      BARW C 5 A_GunFlash
-      BARW D 5 A_FireCustomMisSile ("BaronBall")
-      BARW E 5
-      TNT1 A 5 A_ReFire
-      BARW J 5 
-      Goto Ready
-    Flash:
-      TNT1 A 5
-      TNT1 A 5 bright A_Light1
-      TNT1 A 0 A_Light0
-      stop
-    AltFire:
-      BARW FG 5
-      BARW H 5 A_CustomPunch (10)
-      BARW I 5
-      TNT1 A 5 A_ReFire
-      BARW J 5
-      goto ready
-  }
-}
-*/
 
 ////////////////////////////////////////////////////
 ////  Projectile actor class
@@ -249,7 +223,7 @@ actor BaronPlayerSmallBall : BaronBall
   Height 12
   Speed 20
   FastSpeed 20
-  Damage (8) //original is 8 * random(1,8)
+  Damage 8 //original is 8 * random(1,8)
   Projectile
   +RANDOMIZE
   RenderStyle Add
@@ -261,12 +235,235 @@ actor BaronPlayerSmallBall : BaronBall
   States
   {
     Spawn:
-      BAL7 AB 4 Bright
+      BAL7 AB 4 bright
       Loop
     Death:
-      BAL7 CDE 6 Bright
+      BAL7 CDE 6 bright
       Stop
   }
+}
+
+actor BaronHellfireShard  //embers spawned by large balls, dealing little damage but spawning a small hellfire
+{
+  DamageType Hellfire
+  Radius 4
+  Height 8
+  Speed 10
+  FastSpeed 10
+  Damage 2
+  Projectile
+  +RANDOMIZE
+  -NOGRAVITY
+  Gravity 1.0
+  RenderStyle Add
+  Alpha 0.75
+  Scale 0.35
+  //SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+
+  States
+  {
+    Spawn:
+      BMBS AAAABBBB 1 bright A_SpawnItemEx("BaronHellfireShardTrail")
+      loop
+
+    Death:
+      BMBS A 0 bright A_SpawnProjectile("BaronHellfireSmall", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), 0)
+      stop
+  }
+}
+
+actor BaronHellfireShardTrail
+{
+  Radius 4
+  Height 8
+  RenderStyle Add
+  Scale 0.25
+  Alpha 0.5
+
+  +NOGRAVITY
+  +NOBLOCKMAP
+  +NOCLIP
+
+  States
+  {
+    Spawn:
+      BMBS AAABBBAABB 1 Bright A_FadeOut(0.05)
+      stop
+  }
+}
+
+actor BaronPlayerStrongBall : BaronBall
+{
+  DamageType Hellfire
+  Radius 6
+  Height 12
+  Speed 40
+  FastSpeed 40
+  Damage 32 //original is 8 * random (1,8)
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 0.9
+  Scale 1.0
+  SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+
+  reactiontime 12
+
+  States
+  {
+    Spawn:
+      BMB1 AB 4 bright
+      loop
+
+    Death:
+      BAL7 C 0 bright A_JumpIfInventory("BaronStrongBallSpawnedEmbers", 1, "ExplosionFinish")
+      BAL7 C 0 bright A_GiveInventory("BaronStrongBallSpawnedEmbers", 1) 
+      goto ExplosionLoop
+
+      //spawn small embers according to ReactionTime
+    ExplosionLoop:
+      BAL7 C 0 bright A_SpawnProjectile ("BaronHellfireShard", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), random(-60, -30))
+      BAL7 C 0 bright A_Countdown
+      loop
+  
+    ExplosionFinish:
+      BAL7 C 0 bright A_SetScale (1.5)
+      BAL7 CDE 6 bright
+      stop
+  }
+}
+
+actor BaronPlayerStrongBall12 : BaronPlayerStrongBall { reactiontime 12 }
+actor BaronPlayerStrongBall13 : BaronPlayerStrongBall { reactiontime 13 }
+actor BaronPlayerStrongBall14 : BaronPlayerStrongBall { reactiontime 14 }
+actor BaronPlayerStrongBall15 : BaronPlayerStrongBall { reactiontime 15 }
+actor BaronPlayerStrongBall16 : BaronPlayerStrongBall { reactiontime 16 }
+actor BaronPlayerStrongBall17 : BaronPlayerStrongBall { reactiontime 17 }
+actor BaronPlayerStrongBall18 : BaronPlayerStrongBall { reactiontime 18 }
+actor BaronPlayerStrongBall19 : BaronPlayerStrongBall { reactiontime 19 }
+actor BaronPlayerStrongBall20 : BaronPlayerStrongBall { reactiontime 20 }
+actor BaronPlayerStrongBall21 : BaronPlayerStrongBall { reactiontime 21 }
+actor BaronPlayerStrongBall22 : BaronPlayerStrongBall { reactiontime 22 }
+actor BaronPlayerStrongBall23 : BaronPlayerStrongBall { reactiontime 23 }
+
+//A_SpawnProjectile (string missiletype, float spawnheight, float spawnofs_xy, double angle, int flags, angle pitch
+actor BaronPlayerMegaBall : BaronBall
+{
+  DamageType Hellfire
+  Radius 6
+  Height 12
+  Speed 40
+  FastSpeed 40
+  Damage 64 //original is 8 * random (1,8)
+  Projectile
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 0.9
+  Scale 1.5
+  SeeSound "baron/attack"
+  DeathSound "baron/shotx"
+
+  States
+  {
+    Spawn:
+      BMB1 AB 4 bright
+      Loop
+    Death:
+      BAL7 C 0 bright A_SetScale (2.0)
+      //spawn 36 small embers
+      BAL7 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 0 bright A_SpawnProjectile ("BaronHellfireShard", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), random(-60, -30))
+      //spawn large flame
+      BAL7 C 0 bright A_SpawnProjectile ("BaronHellfireLarge", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), 0)
+      BAL7 CDE 6 bright
+      Stop
+  }
+}
+
+actor BaronHellfireSmall
+{
+  DamageType Hellfire
+  scale 1.0
+  Radius 8
+  Height 40
+  renderstyle Add
+  alpha 0.90
+  DONTHURTSHOOTER
+  PROJECTILE
+  -MISSILE
+  +FORCERADIUSDMG
+  -NOGRAVITY
+  +LOWGRAVITY
+  +NOEXPLODEFLOOR
+  +NODAMAGETHRUST
+  +THRUGHOST
+  +FLOORHUGGER
+    // ~8.66 seconds, ~156 damage
+  reactiontime 12
+  states
+  {
+    Spawn:
+      BRFS PON 2 bright 
+      goto LifeLoop
+
+    LifeLoop:
+      BRFS A 0 bright A_PlaySound("weapons/onfire")
+      BRFS ABCDEFGHIJKLM 2 bright A_Explode (BaronSmallHellfireDamage, 32, (~XF_HURTSOURCE), false, 16)
+      BRFS A 0 bright A_Countdown
+      goto LifeLoop
+
+    Death:
+      BRFS NOP 2 bright 
+      stop
+  }
+}
+
+actor BaronHellfireLarge
+{
+  DamageType Hellfire
+  scale 1.0
+  Radius 16
+  Height 40
+  renderstyle Add
+  alpha 0.90
+  DONTHURTSHOOTER
+  PROJECTILE
+  -MISSILE
+  +FORCERADIUSDMG
+  -NOGRAVITY
+  +LOWGRAVITY
+  +NOEXPLODEFLOOR
+  +NODAMAGETHRUST
+  +THRUGHOST
+  +FLOORHUGGER
+  reactiontime 32 //number of lifetime loops, each lasts 18 ticks and deals 54 damage
+  states
+  {
+    Spawn:
+      BRFL ABC 2 bright 
+
+    LifeLoop:
+      BRFL D 0 bright A_PlaySound("weapons/onfire")
+      BRFL DEFGDEFGH 2 bright A_Explode (BaronLargeHellfireDamage, 64, (~XF_HURTSOURCE), false, 48)
+      BRLF D 0 bright A_Countdown
+      goto LifeLoop
+
+    Death:
+      BRFL NOP 2 bright 
+      stop
+  }
+}
+
+actor BaronStrongBallSpawnedEmbers : inventory //given to itself by the strong attack projectile to check ember spawning has been performed
+{
+  inventory.amount 1
+  inventory.maxamount 1
+  +INVENTORY.QUIET
+  +INVENTORY.UNDROPPABLE
+  //+INVENTORY.HUBPOWER
+  +INVENTORY.ALWAYSPICKUP
+  +INVENTORY.IGNORESKILL
 }
 
 
@@ -276,7 +473,7 @@ actor BaronPlayerSmallBall : BaronBall
 actor BaronMana : ammo
 {
   inventory.amount 6
-  inventory.maxamount 6
+  inventory.maxamount 24
   inventory.icon "BAL7A0"
   RENDERSTYLE TRANSLUCENT
   ALPHA 0.5
@@ -285,5 +482,28 @@ actor BaronMana : ammo
     Spawn:
       BAL7 CCDDE 7
       loop
+  }
+}
+
+////////////////////////////////////////////////////
+////  Armor regeneration class
+
+ACTOR BaronArmorRune : BasicArmorBonus
+{
+  Radius 20
+  Height 16
+  Inventory.PickupMessage "Picked up a rune of demonic toughness." // "Picked up an armor bonus."
+  Inventory.Icon "PNTCC0"
+  Armor.SavePercent 50
+  Armor.SaveAmount 1
+  Armor.MaxSaveAmount 1000
+  //+COUNTITEM
+  +INVENTORY.ALWAYSPICKUP
+  +INVENTORY.QUIET
+  States
+  {
+  Spawn:
+    PNTC ABC 8
+    Loop
   }
 }
