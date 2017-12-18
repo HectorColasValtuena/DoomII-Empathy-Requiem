@@ -17,7 +17,7 @@ const float BaronLargeHellfireDamage = 6;
 ////////////////////////////////////////////////////
 ////  Player actor class
 
-actor BaronPlayer : PlayerPawn
+actor BaronPlayer : BaseEmpathyPlayer
 {
   Speed 0.8
 	Health 1000

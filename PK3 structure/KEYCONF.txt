@@ -17,7 +17,7 @@ addplayerclass ArchVilePlayer
 
 weaponsection EmpathyWeaponry
 
-setslot 1 KnightArm BaronArm DemonJaws SpectreJaws ImpArm BloodImpArm MancubusArms CacodemonMouth PainMouth ArachnotronRifle RevenantCanons SpiderChaingun CyberdemonCanon ArchVilePower
+setslot 1 KnightArm BaronArm DemonJaws SpectreJaws ImpArm BloodImpArm MancubusArms CacodemonMouth PainMouth ArachnotronRifle RevenantCannons SpiderChaingun CyberdemonCanon ArchVilePower
 setslot 2 
 setslot 3
 setslot 4

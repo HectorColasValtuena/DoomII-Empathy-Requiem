@@ -5,6 +5,8 @@
 #include "Decorate/PlayerClasses/BloodImpPlayer.txt"
 #include "Decorate/PlayerClasses/DemonPlayer.txt"
 #include "Decorate/PlayerClasses/SpectrePlayer.txt"
+
 #include "Decorate/PlayerClasses/KnightPlayer.txt"
+#include "Decorate/PlayerClasses/RevenantPlayer.txt"
 
 #include "Decorate/PlayerClasses/BaronPlayer.txt"

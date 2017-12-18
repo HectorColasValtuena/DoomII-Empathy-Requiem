@@ -1,5 +1,5 @@
 actor PlayerMonsterClassDefiner : inventory //this will be used to identify wich class the player is,
-{				 // this shouldn't be used directly, but inherited with the desired name
+{				 							// this shouldn't be used directly, but inherited with the desired name
   inventory.amount 1
   inventory.maxamount 1
   +INVENTORY.QUIET

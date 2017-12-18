@@ -34,5 +34,6 @@ Sprites
 	Weapons
 		Mancubus Arm - Xim
 		Plasma Repeater - BadMojo
+		Scepter of souls - Ghastly_Dragon
 Music
 	Alternate Dark Ambient Music Pack - Sergeant-mark-iv

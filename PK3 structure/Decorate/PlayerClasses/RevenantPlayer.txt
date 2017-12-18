@@ -1,0 +1,200 @@
+////////////////////////////////////////////////////
+/////////////////// REVENANT ///////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////  Defines / Variables
+
+////////////////////////////////////////////////////
+////  Player actor class
+
+actor RevenantPlayer : BaseEmpathyPlayer
+{
+        Speed 0.9114583
+	Health 300
+	Radius 20
+	Height 56
+	Mass 500
+	PainChance 255
+	player.attackzoffset 8
+	player.maxhealth 300
+	player.soundclass "RevenantPlayerSnd"
+	player.morphweapon "RevenantCannons"
+	Player.ColorRange 0, 0
+	Player.DisplayName "Revenant"
+	Player.StartItem "RevenantCannons"
+	Player.StartItem "PlayerIsRevenant"
+	Player.StartItem "RevenantSeekerAmmo", 100
+        
+	States
+	{
+	Spawn:
+		SKEL A 7
+		SKEL A 0 A_GiveInventory ("RevenantSeekerAmmo", 10)
+		SKEL B 7
+		SKEL B 0 A_GiveInventory ("RevenantSeekerAmmo", 10)
+		Loop
+	See:
+		SKEL AABBCCDDEEFF 2 
+		Loop
+	Melee://Missile:
+    		SKEL J 10 bright
+    		SKEL K 20
+		Goto Spawn
+	
+	Missile://Melee:
+    		SKEL GHI 6
+		Goto Spawn
+	Pain:
+		SKEL L 5
+    		SKEL L 5 A_Pain
+		Goto Spawn
+	Death:
+		SKEL L 7 A_PlayerSkinCheck("AltSkinDeath")
+		SKEL M 7
+		SKEL N 7 A_PlayerScream
+		SKEL O 7 A_NoBlocking
+    		SKEL P 7
+    		SKEL Q -1
+		Stop
+	XDeath:
+		goto death
+		Stop
+	AltSkinDeath:
+		SKEL L 7
+		SKEL M 7
+		SKEL N 7 A_PlayerScream
+		SKEL O 7 A_NoBlocking
+    		SKEL P 7
+    		SKEL Q -1
+		Stop
+	}
+  }
+
+
+////////////////////////////////////////////////////
+////  Weapon(s) Actor Class
+
+actor RevenantCannons : weapon
+{
+  radius 20
+  height 20
+  obituary "%o couldn't evade a k%'s tracer"
+  inventory.pickupmessage "Feel the power of a Revenant"
+  attacksound "skeleton/melee"
+  weapon.selectionorder 5000
+  weapon.kickback 500
+  weapon.ammotype "RevenantSeekerAmmo"
+  weapon.ammouse1 1
+  weapon.ammouse2 0
+  weapon.ammogive 100
+  +WEAPON.DONTBOB
+  +WEAPON.AMMO_OPTIONAL
+  +WEAPON.ALT_AMMO_OPTIONAL
+  
+  States
+  {
+    Deselect: 
+      REVC A -1 
+      LOOP 
+    Select: 
+      REVC A 1 A_Raise 
+      LOOP
+    Ready: 
+      REVC A 8 A_WeaponReady
+      REVC A 0 A_GiveInventory ("RevenantSeekerAmmo", 10)
+      LOOP
+    Fire:
+      REVC A 0 A_JumpIfNoAmmo ("AltFire")
+      REVC B 2 A_GunFlash
+      REVC C 2 A_FireCustomMissile ("RevenantPlayerSeeker")
+      REVC DE 2 
+      REVC A 5 A_ReFire 
+      Goto Ready
+    Flash:
+      TNT1 A 25 bright A_Light1
+      TNT1 A 0 A_Light0
+      stop
+    AltFire:
+      REVC F 6 A_PlaySoundEx("skeleton/swing","Weapon")
+      REVC G 6 
+      REVC H 6 A_CustomPunch (8)
+      REVC IJ 5
+      REVC A 0 A_ReFire
+      goto ready
+  }
+}
+
+
+////////////////////////////////////////////////////
+////  Projectile actor class
+
+ACTOR RevenantPlayerSeeker
+{
+  Radius 8
+  Height 4
+  Speed 10
+  Damage 5 //original is 10
+  Projectile
+  SeeSound "skeleton/attack"
+  DeathSound "skeleton/tracex"
+  RenderStyle Add
+  +SEEKERMISSILE
+  +RANDOMIZE
+  States
+  {
+    //A_SeekerMissile (angle threshold, angle maxturnangle, int flags = 0, int chance = 50, int distance = 10)
+    Spawn:
+      FATB AB 2 Bright A_SeekerMissile (3, 18, (SMF_LOOK | SMF_PRECISE), 100)
+      loop
+
+    Death:
+      FBXP A 6 Bright
+      FBXP B 4 Bright
+      FBXP C 2 Bright
+      stop
+  }
+}
+
+/*
+  actor MagicMissile
+  {
+    Projectile
+    +RANDOMIZE
+    +SEEKERMISSILE
+    Height 16
+    Radius 8
+    Speed 10
+    Damage (random(13, 17))
+    RenderStyle "Add"
+    Alpha 0.8
+    States
+    {
+    Spawn:
+      MMIS B 2 Bright A_SeekerMissile(0, 2) // MMIS is the sprite used for the missile.
+      Loop
+    Death:
+      MMIS CDE 5 Bright
+      Stop
+    }
+  }
+*/
+
+////////////////////////////////////////////////////
+////  Ammo actor class
+
+actor RevenantSeekerAmmo : ammo
+{
+  inventory.amount 100
+  inventory.maxamount 100
+  inventory.icon "ROCKA0"
+  //RENDERSTYLE TRANSLUCENT
+  //ALPHA 0.5
+  states
+  {
+    Spawn:
+      ROCK A -1
+      stop
+  }
+}
+
