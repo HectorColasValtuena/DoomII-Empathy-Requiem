@@ -36,58 +36,50 @@ actor BaronPlayer : BaseEmpathyPlayer
 	Player.StartItem "BaronArm"
 	Player.StartItem "PlayerIsBaron"
 	Player.StartItem "BaronMana", 6
-
-        Player.StartItem "BFG9000"		//all weapons are given to avoid autoswitch
-        Player.StartItem "Chaingun"		//when picking up them
-        Player.StartItem "Chainsaw"
-        Player.StartItem "Fist"
-        Player.StartItem "Pistol"
-        Player.StartItem "PlasmaRifle"
-        Player.StartItem "RocketLauncher"
-        Player.StartItem "Shotgun"
-        Player.StartItem "SuperShotgun"
         
 	States
 	{
-	Spawn:
-		BOSS A 7
-		BOSS A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
-		BOSS B 7
-		BOSS A 0 A_GiveInventory ("MonsterMana",ManaRegenBase)
-		Loop
-	See:
-		BOSS AABBCCDD 3 
-		Loop
-	Missile:
-		BOSS EF 8
- 		BOSS G 8
-		Goto Spawn
-	Melee:
-		BOSS EF 8
- 		BOSS G 8
-		Goto Spawn
-	Pain:
-		BOSS H 4
-    		BOSS H 4 A_Pain
-		Goto Spawn
-	Death:
-		BOSS I 8 A_PlayerSkinCheck("AltSkinDeath")
-		BOSS J 8 A_PlayerScream
-		BOSS K 8
-    		BOSS L 8 A_NoBlocking
-    		BOSS MN 8
-    		BOSS O -1
-		Stop
-	XDeath:
-		goto death
-	AltSkinDeath:
-		BOSS I 8
-		BOSS J 8 A_PlayerScream
-		BOSS K 8
-    		BOSS L 8 A_NoBlocking
-    		BOSS MN 8
-    		BOSS O -1
-		Stop
+  	Spawn:
+  		BOSS AB 7
+  		Loop
+  	See:
+  		BOSS AABBCCDD 3 
+  		Loop
+      
+  	Missile:
+  		BOSS EFG 8
+  		Goto Spawn
+
+  	Melee:
+  		BOSS EF 8
+   		BOSS G 8
+  		Goto Spawn
+
+  	Pain:
+  		BOSS H 4
+      BOSS H 4 A_Pain
+  		Goto Spawn
+
+  	Death:
+  		BOSS I 8 A_PlayerSkinCheck("AltSkinDeath")
+  		BOSS J 8 A_PlayerScream
+  		BOSS K 8
+      BOSS L 8 A_NoBlocking
+      BOSS MN 8
+      BOSS O -1
+  		Stop
+
+  	XDeath:
+  		goto death
+
+  	AltSkinDeath:
+  		BOSS I 8
+  		BOSS J 8 A_PlayerScream
+  		BOSS K 8
+      		BOSS L 8 A_NoBlocking
+      		BOSS MN 8
+      		BOSS O -1
+  		Stop
 	}
 }
 
