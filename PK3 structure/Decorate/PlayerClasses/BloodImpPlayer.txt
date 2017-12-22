@@ -205,11 +205,11 @@ actor BloodImpBall : DoomImpBall
   States
   {
   Spawn:
-    BAL1 AAAABBBB 1 Bright A_SpawnItemEx("BloodImpBallTrail")
-    Loop
+    BAL1 AAAABBBB 1 bright light("BloodImpFireball") A_SpawnItemEx("BloodImpBallTrail")
+    loop
   Death:
-    BAL1 CDE 6 Bright
-    Stop
+    BAL1 CDE 6 bright light("BloodImpFireballExplosion")
+    stop
   }
 }
 

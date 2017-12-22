@@ -1,0 +1,11 @@
+pointlight BloodImpFireball
+{
+	color 0.8 0.2 0.0
+	size 16
+}
+
+pointlight BloodImpFireballExplosion
+{
+	color 0.8 0.2 0.0
+	size 32
+}

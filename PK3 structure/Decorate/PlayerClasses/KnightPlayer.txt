@@ -175,10 +175,10 @@ actor KnightPlayerBall : BaronBall
   States
   {
     Spawn:
-      BAL7 AB 4 Bright
+      BAL7 AB 4 bright light("BaronSmallBall")
       Loop
     Death:
-      BAL7 CDE 6 Bright
+      BAL7 CDE 6 bright light("BaronSmallBallExplosion")
       Stop
   }
 }

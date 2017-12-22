@@ -191,13 +191,13 @@ ACTOR RevenantPlayerSeeker
   {
     //A_SeekerMissile (angle threshold, angle maxturnangle, int flags = 0, int chance = 50, int distance = 10)
     Spawn:
-      FATB AB 2 Bright A_SeekerMissile (3, 18, (SMF_LOOK | SMF_PRECISE), 100)
+      FATB AB 2 Bright light("RevenantSeeker") A_SeekerMissile (3, 15, (SMF_LOOK | SMF_PRECISE), 100)
       loop
 
     Death:
-      FBXP A 6 Bright
-      FBXP B 4 Bright
-      FBXP C 2 Bright
+      FBXP A 6 Bright light("RevenantSeekerExplosion")
+      FBXP B 4 Bright light("RevenantSeekerExplosion")
+      FBXP C 2 Bright light("RevenantSeekerExplosion")
       stop
   }
 }
