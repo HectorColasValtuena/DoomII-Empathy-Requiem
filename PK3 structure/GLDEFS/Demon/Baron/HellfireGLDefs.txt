@@ -1,0 +1,51 @@
+flickerlight2 HellfireLarge
+{
+	color 0.0 1.0 0.0
+	size 64
+	secondarySize 128
+	interval 0.01
+}
+
+flickerlight2 HellfireSmall
+{
+	color 0.0 1.0 0.0
+	size 24
+	secondarySize 48
+	interval 0.01
+}
+
+pointlight BaronSmallBall
+{
+	color 0.0 0.8 0.2
+	size 16
+}
+
+pointlight BaronSmallBallExplosion
+{
+	color 0.0 0.8 0.2
+	size 32
+}
+
+pointlight BaronStrongBall
+{
+	color 0.0 0.9 0.1
+	size 32
+}
+
+pointlight BaronStrongBallExplosion
+{
+	color 0.0 0.9 0.1
+	size 32
+}
+
+pointlight BaronMegaBall
+{
+	color 0.0 1.0 0.0
+	size 64
+}
+
+pointlight BaronMegaBallExplosion
+{
+	color 0.0 1.0 0.0
+	size 128
+}

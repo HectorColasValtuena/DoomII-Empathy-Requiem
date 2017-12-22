@@ -219,7 +219,7 @@ actor BaronPlayerSmallBall : BaronBall
   Projectile
   +RANDOMIZE
   RenderStyle Add
-  Alpha 0.75
+  Alpha 0.9
   Scale 0.75
   SeeSound "baron/attack"
   DeathSound "baron/shotx"
@@ -227,10 +227,10 @@ actor BaronPlayerSmallBall : BaronBall
   States
   {
     Spawn:
-      BAL7 AB 4 bright
+      BAL7 AB 4 bright light("BaronSmallBall")
       Loop
     Death:
-      BAL7 CDE 6 bright
+      BAL7 CDE 6 bright light("BaronSmallBallExplosion")
       Stop
   }
 }
@@ -306,7 +306,7 @@ actor BaronPlayerStrongBall : BaronBall
   States
   {
     Spawn:
-      BMB1 AB 4 bright
+      BMB1 AB 4 bright light("BaronStrongBall")
       loop
 
     Death:
@@ -322,7 +322,7 @@ actor BaronPlayerStrongBall : BaronBall
   
     ExplosionFinish:
       BAL7 C 0 bright A_SetScale (1.5)
-      BAL7 CDE 6 bright
+      BAL7 CDE 6 bright light("BaronStrongBallExplosion")
       stop
   }
 }
@@ -360,7 +360,7 @@ actor BaronPlayerMegaBall : BaronBall
   States
   {
     Spawn:
-      BMB1 AB 4 bright
+      BMB1 AB 4 bright light("BaronMegaBall")
       Loop
     Death:
       BAL7 C 0 bright A_SetScale (2.0)
@@ -368,7 +368,7 @@ actor BaronPlayerMegaBall : BaronBall
       BAL7 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 0 bright A_SpawnProjectile ("BaronHellfireShard", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), random(-60, -30))
       //spawn large flame
       BAL7 C 0 bright A_SpawnProjectile ("BaronHellfireLarge", 0, 0, random(0, 360), (CMF_AIMDIRECTION | CMF_TRACKOWNER), 0)
-      BAL7 CDE 6 bright
+      BAL7 CDE 6 bright light("BaronMegaBallExplosion")
       Stop
   }
 }
@@ -396,17 +396,17 @@ actor BaronHellfireSmall
   states
   {
     Spawn:
-      BRFS PON 2 bright 
+      BRFS PON 2 bright light("HellfireSmall")
       goto LifeLoop
 
     LifeLoop:
-      BRFS A 0 bright A_PlaySound("weapons/onfire")
-      BRFS ABCDEFGHIJKLM 2 bright A_Explode (BaronSmallHellfireDamage, 32, (~XF_HURTSOURCE), false, 16)
-      BRFS A 0 bright A_Countdown
+      BRFS A 0 bright light("HellfireSmall") A_PlaySound("weapons/onfire")
+      BRFS ABCDEFGHIJKLM 2 bright light("HellfireSmall") A_Explode (BaronSmallHellfireDamage, 32, (~XF_HURTSOURCE), false, 16)
+      BRFS A 0 bright light("HellfireSmall") A_Countdown
       goto LifeLoop
 
     Death:
-      BRFS NOP 2 bright 
+      BRFS NOP 2 bright light("HellfireSmall")
       stop
   }
 }
@@ -429,20 +429,20 @@ actor BaronHellfireLarge
   +NODAMAGETHRUST
   +THRUGHOST
   +FLOORHUGGER
-  reactiontime 32 //number of lifetime loops, each lasts 18 ticks and deals 54 damage
+  reactiontime 32 //number of lifetime loops, each lasts 18 ticks (1/2 second) and deals 54 damage
   states
   {
     Spawn:
-      BRFL ABC 2 bright 
+      BRFL ABC 2 bright Light("HellfireLarge") 
 
     LifeLoop:
-      BRFL D 0 bright A_PlaySound("weapons/onfire")
-      BRFL DEFGDEFGH 2 bright A_Explode (BaronLargeHellfireDamage, 64, (~XF_HURTSOURCE), false, 48)
-      BRLF D 0 bright A_Countdown
+      BRFL D 0 bright Light("HellfireLarge") A_PlaySound("weapons/onfire")
+      BRFL DEFGDEFGH 2 bright Light("HellfireLarge") A_Explode (BaronLargeHellfireDamage, 64, (~XF_HURTSOURCE), false, 48)
+      BRLF D 0 bright Light("HellfireLarge") A_Countdown
       goto LifeLoop
 
     Death:
-      BRFL NOP 2 bright 
+      BRFL IJK 2 bright Light("HellfireLarge")
       stop
   }
 }

@@ -1,2 +1,3 @@
 //PLAYER/DEMON PROYECTILES
-#include "GLDEFS/Demon/BloodImp/BloodImp.txt"
+//#include "GLDEFS/Demon/BloodImp/BloodImp.txt"
+#include "GLDEFS/Demon/Baron/HellfireGLDefs.txt"
