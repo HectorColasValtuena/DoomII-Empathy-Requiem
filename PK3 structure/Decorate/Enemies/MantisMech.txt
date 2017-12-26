@@ -5,15 +5,16 @@ actor MantisMech : EmpathyBaseEnemyMediumHuman replaces HellKnight 16051
   Height 60
   Speed 8
   PainChance 64
+  Mass 300
 
   MaxDropOffHeight 32
-  MinMissileChance 200
+  MinMissileChance 100
   MeleeRange 48
 
   +NOBLOOD
   +NOSPLASHALERT
-  //+MISSILEMORE
-  //+MISSILEEVENMORE
+  +MISSILEMORE
+  +MISSILEEVENMORE
 
   SeeSound "enemy/mantis/sight"
   AttackSound "enemy/mantis/shot"
@@ -41,11 +42,15 @@ actor MantisMech : EmpathyBaseEnemyMediumHuman replaces HellKnight 16051
       //A_SpawnProjectile (string missiletype, float spawnheight, float spawnofs_xy, double angle, int flags, angle pitch, int ptr)
     Missile:
       PGRD G 8 Bright A_FaceTarget
-      PGRD H 8 Bright light("GreenPlasmaHelixShot")
       PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall0")
       PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall1")
       PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall2")
       PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall3")
+      PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall4")
+      PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall5")
+      PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall6")
+      PGRD H 0 A_SpawnProjectile("GreenPlasmaHelixBall7")
+      PGRD H 8 Bright light("GreenPlasmaHelixShot")
       Goto See
 
     Pain:
