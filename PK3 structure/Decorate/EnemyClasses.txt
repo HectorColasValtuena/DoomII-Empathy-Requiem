@@ -1,0 +1,9 @@
+#include "Decorate/Enemies/BaseEmpathyEnemy.txt"
+
+#include "Decorate/Enemies/PlasmaProjectiles.txt"
+
+#include "Decorate/Enemies/Guard.txt"
+#include "Decorate/Enemies/Scientist.txt"
+#include "Decorate/Enemies/Patrol.txt"
+
+#include "Decorate/Enemies/MantisMech.txt"

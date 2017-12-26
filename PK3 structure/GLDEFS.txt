@@ -3,3 +3,7 @@
 #include "GLDEFS/Demon/HellfireGLDefs.txt"
 #include "GLDEFS/Demon/RevenantGLDefs.txt"
 #include "GLDEFS/Demon/BloodImpGLDefs.txt"
+
+//HUMAN PROJECTILES
+#include "GLDEFS/Human/PlasmaPistolGLDefs.txt"
+#include "GLDEFS/Human/MantisMechHelixGLDefs.txt"

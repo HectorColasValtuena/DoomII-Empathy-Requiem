@@ -1,0 +1,23 @@
+pointlight PlasmaPistolBall
+{
+	color 0.8 0.8 0.0
+	size 24
+}
+
+pointlight PlasmaPistolBallExp1
+{
+	color 0.8 0.8 0.0
+	size 48
+}
+
+pointlight PlasmaPistolBallExp2
+{
+	color 0.8 0.8 0.0
+	size 32
+}
+
+pointlight PlasmaPistolShot
+{
+	color 0.8 0.8 0.0
+	size 64
+}

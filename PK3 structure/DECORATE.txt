@@ -2,6 +2,11 @@
 //////////////////   INCLUDES    ///////////////////
 ////////////////////////////////////////////////////
 #include "Decorate/PlayerClasses.txt"
+#include "Decorate/EnemyClasses.txt"
+
+
+////!!  EVERYTHING beyond this point should be eventually REMOVED from here and moved to other files. 
+////!!  This file should end up only containing includes
 
 ////////////////////////////////////////////////////
 //////////////////   CONSTANTS   ///////////////////

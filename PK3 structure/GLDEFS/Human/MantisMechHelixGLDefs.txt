@@ -1,0 +1,23 @@
+pointlight GreenPlasmaHelixBall
+{
+	color 0.0 1.0 0.2
+	size 32
+}
+
+pointlight GreenPlasmaHelixExp1
+{
+	color 0.0 1.0 0.2
+	size 64
+}
+
+pointlight GreenPlasmaHelixExp2
+{
+	color 0.0 1.0 0.2
+	size 48
+}
+
+pointlight GreenPlasmaHelixShot
+{
+	color 0.0 1.0 0.2
+	size 80
+}

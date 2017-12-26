@@ -1,0 +1,59 @@
+actor Guard : EmpathyBaseEnemySmallHuman replaces DoomImp 16002
+{
+  Health 20
+  Radius 20
+  Height 56
+  Speed 8
+  PainChance 200
+  
+  SeeSound "enemy/guard/sight"
+  AttackSound "enemy/guard/shot"
+  PainSound "enemy/guard/pain"
+  DeathSound "enemy/guard/death"
+  ActiveSound "enemy/guard/sight"
+  Obituary "%o was shot by a facility guard."
+  
+  States
+  {
+    Spawn:
+      GUAR A 10 A_Look
+      Loop
+    See:
+      GUAR BBCCDDEE 4 A_Chase
+      Loop
+    //A_SpawnProjectile (string missiletype, float spawnheight, float spawnofs_xy, double angle, int flags, angle pitch, int ptr)
+    Missile:
+      GUAR FG 8 A_FaceTarget
+      GUAR H 8 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 36, 4)
+      GUAR GF 4
+      Goto See
+    Pain:
+      GUAR I 3
+      GUAR I 3 A_Pain
+      Goto See
+    Death:
+      GUAR I 6
+      GUAR J 6 A_Scream
+      GUAR K 6 A_NoBlocking
+      GUAR L 6
+      GUAR M 6
+      GUAR N -1
+      Stop
+    XDeath:
+      goto Death
+    /*
+      GUAR M 5
+      GUAR N 5 A_XScream
+      POSS O 5 A_NoBlocking
+      POSS PQRST 5
+      POSS U -1
+      Stop
+    */
+    Raise:
+      //GUAR M 4
+      GUAR MLKJI 4
+      Goto See
+  }
+}
+  
+  

@@ -1,4 +1,7 @@
-actor BaseEmpathyPlayer : PlayerPawn {
+actor BaseEmpathyPlayer : PlayerPawn
+{
+
+    +NOSKIN
 
 	/* The following code block is to be removed when testing's finished, as final campaign won't have weapon pickups */
 	    Player.StartItem "BFG9000"		//all weapons are given to avoid autoswitch

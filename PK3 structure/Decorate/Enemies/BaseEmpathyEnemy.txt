@@ -1,0 +1,25 @@
+actor EmpathyBaseEnemy 
+{
+  MinMissileChance 200
+
+  Species human
+  Monster
+  +FLOORCLIP
+
+  //DropItem "SmallSoul"
+}
+
+actor EmpathyBaseEnemySmallHuman : EmpathyBaseEnemy
+{
+  //DropItem "SmallSoul"
+}
+
+actor EmpathyBaseEnemyMediumHuman : EmpathyBaseEnemy
+{
+  //DropItem "MediumSoul"
+}
+
+actor EmpathyBaseEnemyLargeHuman : EmpathyBaseEnemy
+{
+  //DropItem "LargeSoul"
+}

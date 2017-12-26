@@ -1,0 +1,61 @@
+$pitchshiftrange 3
+
+////////
+//////// Scientist ////////
+////////
+
+enemy/scientist/sight		ScieSee
+enemy/scientist/death1		ScieDie1
+enemy/scientist/death2		ScieDie2
+
+$random enemy/scientist/death {
+	enemy/scientist/death1
+	enemy/scientist/death2
+}
+
+enemy/scientist/pain 		ScieDie1 //!!!! TO-DO replace with a proper pain sound
+
+////////
+//////// Guard ////////
+////////
+enemy/guard/sight			GuarSee
+enemy/guard/pain1			GuarPn1
+enemy/guard/pain2			GuarPn2
+enemy/guard/death1			GuarDie1
+enemy/guard/death2			GuarDie2
+enemy/guard/shot			GuarSht
+
+$random enemy/guard/pain {
+	enemy/guard/pain1
+	enemy/guard/pain2
+}
+
+$random enemy/guard/death {
+	enemy/guard/death1
+	enemy/guard/death2
+}
+
+////////
+//////// Patrol ////////
+////////
+enemy/patrol/sight			PatrSee
+enemy/patrol/death1			PatrDie1
+enemy/patrol/death2			PatrDie2
+enemy/patrol/death3			PatrDie3
+enemy/patrol/pain			PatrPn1
+
+$random enemy/patrol/death {
+	enemy/patrol/death1
+	enemy/patrol/death2
+	enemy/patrol/death3
+}
+
+////////
+//////// Mantis Mech ////////
+////////
+enemy/mantis/sight				dspgrsee
+enemy/mantis/pain				dspgrdpn
+enemy/mantis/death				dspgrdth
+enemy/mantis/active				dspgract
+enemy/mantis/shoot				dspgrdat
+enemy/mantis/melee				dspgrbld
