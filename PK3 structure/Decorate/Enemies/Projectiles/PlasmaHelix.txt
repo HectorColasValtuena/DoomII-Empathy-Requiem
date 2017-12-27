@@ -1,6 +1,8 @@
 ////////////////////////////////////////////////////
 ////  Plasma green helix
 
+const float GPHHomingRate = 1;
+
 const int GPHWeaveSpeed = 2;
 const float GPHWeaveDist = 2.0; //4.0;
 const float GPHWeaveDistXY = 2.237; //4.474; 
@@ -26,10 +28,15 @@ actor GreenPlasmaHelixBall : FastProjectile
   WeaveIndexXY 0
   WeaveIndexZ 0
 
+  +SEEKERMISSILE
+
   States
   {
     Spawn:
-      GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") A_Weave(GPHWeaveSpeed, GPHWeaveSpeed, GPHWeaveDist, GPHWeaveDist)
+      GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") {
+        A_Weave(GPHWeaveSpeed, GPHWeaveSpeed, GPHWeaveDist, GPHWeaveDist);
+        A_SeekerMissile (0, GPHHomingRate, (SMF_CURSPEED));
+      }
       Loop
     Death:
       GPLB A 4 bright light("GreenPlasmaHelixExp2")
@@ -42,14 +49,20 @@ actor GreenPlasmaHelixBall : FastProjectile
   actor GreenPlasmaHelixBallVert : GreenPlasmaHelixBall {
     States {
       Spawn:
-        GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") A_Weave(0, GPHWeaveSpeed, 0.0, GPHWeaveDistXY)
+        GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") {
+          A_Weave(0, GPHWeaveSpeed, 0.0, GPHWeaveDistXY);
+          A_SeekerMissile (0, GPHHomingRate, (SMF_CURSPEED));
+        }
         Loop
     }
   }
   actor GreenPlasmaHelixBallHorz : GreenPlasmaHelixBall {
     States {
       Spawn:
-        GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") A_Weave(GPHWeaveSpeed, 0, GPHWeaveDistXY, 0.0)
+        GPLB AAAABBBB 1 bright light("GreenPlasmaHelixBall") {
+          A_Weave(GPHWeaveSpeed, 0, GPHWeaveDistXY, 0.0);
+          A_SeekerMissile (0, GPHHomingRate, (SMF_CURSPEED));
+        }
         Loop
     }
   }
