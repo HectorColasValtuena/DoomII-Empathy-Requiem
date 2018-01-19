@@ -100,7 +100,7 @@ actor BaronArm : weapon
   weapon.ammotype2 "BaronMana"
   weapon.ammouse1 1
   weapon.ammouse2 -2
-  weapon.ammogive 6
+  weapon.ammogive 8
   +WEAPON.AMMO_OPTIONAL
   +WEAPON.ALT_AMMO_OPTIONAL
   
@@ -396,12 +396,15 @@ actor BaronHellfireSmall
   states
   {
     Spawn:
+      BRFS P 0 bright A_SetDamageType("Hellfire")
       BRFS PON 2 bright light("HellfireSmall")
       goto LifeLoop
 
     LifeLoop:
       BRFS A 0 bright light("HellfireSmall") A_PlaySound("weapons/onfire")
-      BRFS ABCDEFGHIJKLM 2 bright light("HellfireSmall") A_Explode (BaronSmallHellfireDamage, 32, (~XF_HURTSOURCE), false, 16)
+      BRFS ABCDEFGHIJKLM 2 bright light("HellfireSmall") A_Explode (BaronSmallHellfireDamage, 32, 0, false, 16)
+/*      BRFS ABCDEFGHIJKLM 2 bright light("HellfireSmall") A_Explode (BaronSmallHellfireDamage, 32, (~XF_HURTSOURCE), false, 16)
+*/
       BRFS A 0 bright light("HellfireSmall") A_Countdown
       goto LifeLoop
 
@@ -433,11 +436,12 @@ actor BaronHellfireLarge
   states
   {
     Spawn:
+      BRFL A 0 bright A_SetDamageType("Hellfire")
       BRFL ABC 2 bright Light("HellfireLarge") 
 
     LifeLoop:
-      BRFL D 0 bright Light("HellfireLarge") A_PlaySound("weapons/onfire")
-      BRFL DEFGDEFGH 2 bright Light("HellfireLarge") A_Explode (BaronLargeHellfireDamage, 64, (~XF_HURTSOURCE), false, 48)
+      BRFL D 0 bright Light("HellfireLarge") A_PlaySound("weapons/onfire") //"world/largefire"
+      BRFL DEFGDEFGH 2 bright Light("HellfireLarge") A_Explode (BaronLargeHellfireDamage, 64, 0, false, 48)
       BRLF D 0 bright Light("HellfireLarge") A_Countdown
       goto LifeLoop
 
@@ -464,7 +468,7 @@ actor BaronStrongBallSpawnedEmbers : inventory //given to itself by the strong a
 
 actor BaronMana : ammo
 {
-  inventory.amount 6
+  inventory.amount 8
   inventory.maxamount 24
   inventory.icon "BAL7A0"
   RENDERSTYLE TRANSLUCENT

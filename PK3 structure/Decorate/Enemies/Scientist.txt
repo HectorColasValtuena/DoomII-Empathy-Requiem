@@ -2,7 +2,7 @@ const int ScientistWarnRange = 256;
 const int ScientistWarnChance = 25;
 const int ScientistHasGunChance = 50;
 
-actor Scientist : EmpathyBaseEnemySmallHuman replaces ZombieMan 16001
+actor Scientist : EmpathyBaseEnemyHumanSmall replaces ZombieMan 16001
 {
   Health 10
   Radius 20

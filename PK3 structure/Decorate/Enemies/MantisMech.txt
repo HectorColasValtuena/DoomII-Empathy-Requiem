@@ -1,4 +1,4 @@
-actor MantisMech : EmpathyBaseEnemyMediumHuman replaces HellKnight 16051
+actor MantisMech : EmpathyBaseEnemyRobotMedium replaces HellKnight 16051
 {
   Health 600
   Radius 20

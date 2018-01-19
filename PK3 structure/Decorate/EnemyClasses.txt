@@ -3,8 +3,10 @@
 #include "Decorate/Enemies/Projectiles/PlasmaProjectiles.txt"
 #include "Decorate/Enemies/Projectiles/PlasmaHelix.txt"
 
-#include "Decorate/Enemies/Guard.txt"
 #include "Decorate/Enemies/Scientist.txt"
+#include "Decorate/Enemies/Guard.txt"
 #include "Decorate/Enemies/Patrol.txt"
+#include "Decorate/Enemies/Veteran.txt"
+
 
 #include "Decorate/Enemies/MantisMech.txt"

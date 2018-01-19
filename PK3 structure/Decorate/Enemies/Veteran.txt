@@ -1,0 +1,17 @@
+actor Veteran : EmpathyBaseEnemyHumanSmall replaces Commando 16004
+{
+  Health 100
+  Radius 20
+  Height 56
+  Speed 16
+  PainChance 128
+  
+      SeeSound "enemy/patrol/sight"
+      AttackSound "enemy/guard/shot"
+      PainSound "enemy/patrol/pain"
+      DeathSound "enemy/patrol/death"
+      ActiveSound "enemy/patrol/sight"
+  Obituary "%o was shot by a patrolling veteran."
+  
+  States
+  {

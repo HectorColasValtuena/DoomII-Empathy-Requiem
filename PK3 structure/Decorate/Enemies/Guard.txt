@@ -1,4 +1,4 @@
-actor Guard : EmpathyBaseEnemySmallHuman replaces DoomImp 16002
+actor Guard : EmpathyBaseEnemyHumanSmall replaces DoomImp 16002
 {
   Health 20
   Radius 20

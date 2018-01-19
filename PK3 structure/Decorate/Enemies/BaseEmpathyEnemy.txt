@@ -9,17 +9,38 @@ actor EmpathyBaseEnemy
   //DropItem "SmallSoul"
 }
 
-actor EmpathyBaseEnemySmallHuman : EmpathyBaseEnemy
+
+actor EmpathyBaseEnemyHuman : EmpathyBaseEnemy {
+//Default damagetype-specific human deaths
+	States {
+		Death.Fire:
+			BURN ABCDEFGHIJKLMNOPQRSTUV 3
+			BURN V -1
+			stop
+		Death.Hellfire:
+			BRNG ABCDEFGHIJKLMNOPQRSTUV 3
+			BRNG V -1
+			stop
+	}
+}
+
+actor EmpathyBaseEnemyHumanSmall : EmpathyBaseEnemyHuman
 {
   //DropItem "SmallSoul"
 }
 
-actor EmpathyBaseEnemyMediumHuman : EmpathyBaseEnemy
+actor EmpathyBaseEnemyHumanMedium : EmpathyBaseEnemyHuman
 {
   //DropItem "MediumSoul"
 }
 
-actor EmpathyBaseEnemyLargeHuman : EmpathyBaseEnemy
+actor EmpathyBaseEnemyHumanLarge : EmpathyBaseEnemyHuman
 {
   //DropItem "LargeSoul"
 }
+
+actor EmpathyBaseEnemyRobot : EmpathyBaseEnemy {}
+
+actor EmpathyBaseEnemyRobotSmall : EmpathyBaseEnemyRobot {}
+actor EmpathyBaseEnemyRobotMedium : EmpathyBaseEnemyRobot {}
+actor EmpathyBaseEnemyRobotLarge : EmpathyBaseEnemyRobot {}
