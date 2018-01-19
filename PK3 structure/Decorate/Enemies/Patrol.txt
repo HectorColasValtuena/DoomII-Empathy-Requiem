@@ -14,7 +14,7 @@ actor Patrol : EmpathyBaseEnemyHumanSmall replaces ShotgunGuy 16003
   PainSound "enemy/patrol/pain"
   DeathSound "enemy/patrol/death"
   ActiveSound "enemy/patrol/sight"
-  Obituary "%o was shot by an UAC patrol."
+  Obituary "%o was shot by an UAC facility patrol."
   
   States
   {

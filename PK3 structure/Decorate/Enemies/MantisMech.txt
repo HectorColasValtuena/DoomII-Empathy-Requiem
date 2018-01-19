@@ -21,7 +21,8 @@ actor MantisMech : EmpathyBaseEnemyRobotMedium replaces HellKnight 16051
   PainSound "enemy/mantis/pain"
   DeathSound "enemy/mantis/death"
   ActiveSound "enemy/mantis/active"
-  Obituary "%o got ripped by a Mantis Mech."
+  HitObituary "%o got shredded by a Mantis Mech."
+  Obituary "%o could not dodge the preying Mantis Mech's weave of flesh-melting death."
   
   States
   {
