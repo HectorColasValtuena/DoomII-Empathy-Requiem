@@ -4,3 +4,5 @@ Features
 
 Fixes
 - no carga titlemap ni titlemus
+
+Y, por supuesto, TODO LO DEMÁS
