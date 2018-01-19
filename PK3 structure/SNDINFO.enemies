@@ -7,10 +7,12 @@ $pitchshiftrange 3
 enemy/scientist/sight		ScieSee
 enemy/scientist/death1		ScieDie1
 enemy/scientist/death2		ScieDie2
+enemy/scientist/death3		ScieDie3
 
 $random enemy/scientist/death {
 	enemy/scientist/death1
 	enemy/scientist/death2
+	enemy/scientist/death3
 }
 
 enemy/scientist/pain 		ScieDie1 //!!!! TO-DO replace with a proper pain sound
@@ -48,6 +50,19 @@ $random enemy/patrol/death {
 	enemy/patrol/death1
 	enemy/patrol/death2
 	enemy/patrol/death3
+}
+
+////////
+//////// Veteran ////////
+////////
+enemy/veteran/sight			Vet1See
+enemy/veteran/death1		Vet1Die1
+enemy/veteran/death2		Vet1Die2
+enemy/veteran/feignDeath	Vet1Feig
+
+$random enemy/veteran/death {
+	enemy/veteran/death1
+	enemy/veteran/death2
 }
 
 ////////

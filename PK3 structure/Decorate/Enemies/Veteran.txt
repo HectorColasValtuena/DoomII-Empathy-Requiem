@@ -6,12 +6,13 @@ actor Veteran : EmpathyBaseEnemyHumanSmall replaces Commando 16004
   Speed 16
   PainChance 128
   
-      SeeSound "enemy/patrol/sight"
-      AttackSound "enemy/guard/shot"
-      PainSound "enemy/patrol/pain"
-      DeathSound "enemy/patrol/death"
-      ActiveSound "enemy/patrol/sight"
-  Obituary "%o was shot by a patrolling veteran."
+  SeeSound "enemy/veteran/sight"
+  AttackSound "enemy/guard/shot"
+  PainSound "enemy/veteran/feignDeath"
+  DeathSound "enemy/veteran/death"
+  ActiveSound "enemy/veteram/sight"
+      
+  Obituary "%o couldn't possibly evade that veteran's spray."
   
   States
   {
