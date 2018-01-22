@@ -1,7 +1,7 @@
 const float PatrolBurstSpreadVer = 9;
 const float PatrolBurstSpreadHor = 9;
 
-actor Patrol : EmpathyBaseEnemyHumanSmall replaces ShotgunGuy 16003
+actor Patrol : EmpathyBaseEnemyHumanSmall replaces DoomImp 16003
 {
   Health 50
   Radius 20
@@ -9,11 +9,14 @@ actor Patrol : EmpathyBaseEnemyHumanSmall replaces ShotgunGuy 16003
   Speed 12
   PainChance 176
   
+  +MISSILEMORE
+
   SeeSound "enemy/patrol/sight"
   AttackSound "enemy/guard/shot"
   PainSound "enemy/patrol/pain"
   DeathSound "enemy/patrol/death"
   ActiveSound "enemy/patrol/sight"
+  
   Obituary "%o was shot by an UAC facility patrol."
   
   States
