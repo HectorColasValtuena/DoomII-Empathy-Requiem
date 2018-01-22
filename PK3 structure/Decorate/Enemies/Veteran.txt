@@ -1,9 +1,9 @@
-actor Veteran : EmpathyBaseEnemyHumanSmall replaces Commando 16004
+actor Veteran : EmpathyBaseEnemyHumanSmall replaces ChaingunGuy 16004
 {
-  Health 100
+  Health 80
   Radius 20
   Height 56
-  Speed 16
+  Speed 12
   PainChance 128
   
   SeeSound "enemy/veteran/sight"
@@ -16,3 +16,86 @@ actor Veteran : EmpathyBaseEnemyHumanSmall replaces Commando 16004
   
   States
   {
+    Spawn:
+      VET1 A 10 A_Look
+      Loop
+    See:
+      VET1 BBCCDDEE 3 A_Chase
+      Loop
+    //A_SpawnProjectile (string missiletype, float spawnheight, float spawnofs_xy, double angle, int flags, angle pitch, int ptr)
+    Missile:
+      VET1 FGH 8 A_FaceTarget
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 45)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 35)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 25)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 15)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 5)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -5)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -15)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -25)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -35)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -45)
+      VET1 H 8 A_FaceTarget
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -45)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -35)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -25)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -15)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, -5)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 5)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 15)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 25)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 35)
+      VET1 I 2 bright light("PlasmaPistolShot") A_SpawnProjectile("PlasmaGunBall", 32, 4, 45)
+      VET1 HGF 4
+      goto See
+
+    Pain:
+      VET1 J 2
+      VET1 P 2 A_Pain
+      VET1 QR 2
+      VET1 S 0 {
+        A_UnSetShootable();
+        A_UnSetSolid();
+      }
+      goto FeignDeathLoop
+    
+    FeignDeathLoop:
+      VET1 S 16 HealThing(5)
+      VET1 S 0 A_Jump(248, "FeignDeathLoop")
+      goto FeignDeathAwake
+
+    FeignDeathAwake:
+      VET1 S 0 {
+        A_SetShootable();
+        A_SetSolid();
+        A_ActiveSound();
+      }
+      VET1 SRQPJ 2
+      VET1 J 2 
+      goto See
+
+    Death:
+      VET1 J 6
+      VET1 K 6 A_Scream
+      VET1 L 6 A_NoBlocking
+      VET1 M 6
+      VET1 O 6
+      VET1 O -1
+      stop
+
+    XDeath:
+      goto Death
+    /*
+      VET1 M 5
+      VET1 N 5 A_XScream
+      VET1 O 5 A_NoBlocking
+      VET1 PQRST 5
+      VET1 U -1
+      stop
+    */
+    Raise:
+      //GUAR M 4
+      VET1 OMLKJ 4
+      goto See
+  }
+}
