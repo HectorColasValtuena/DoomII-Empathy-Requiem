@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////
 #include "Decorate/PlayerClasses.txt"
 #include "Decorate/EnemyClasses.txt"
+#include "Decorate/PropClasses.txt"
 
 
 ////!!  EVERYTHING beyond this point should be eventually REMOVED from here and moved to other files. 

@@ -2,8 +2,8 @@
 16200-16399 Allies/Friendly NPCs
 16400-16599 Pickups/powerups/items
 16600-16799 Props/decorations
-16800-16899 Quest items/NPCs
-16900-16999 ??????
+16800-16899 ??????
+16900-16999 Quest items/NPCs
 
 
 Monsters
@@ -14,3 +14,13 @@ Monsters
 	16004	Veteran
 
 	16051	Mantis Mech
+
+Allies
+
+Pickups
+
+Props
+	16899	Praying cultist
+
+
+Quest

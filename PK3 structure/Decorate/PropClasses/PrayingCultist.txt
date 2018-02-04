@@ -1,0 +1,50 @@
+ACTOR PrayingCultist 16899
+{
+
+  Radius 16
+  Height 24
+  Mass 50000
+  +SOLID
+  +SHOOTABLE
+
+  /*
+  Health 51
+  PainChance 255
+  +NOBLOOD
+  +ISMONSTER
+  +INCOMBAT
+  PainSound "misc/static"
+  DeathSound "misc/static"
+  ActiveSound "misc/chant"
+  */
+
+  States
+  {
+    Spawn:
+    See:
+      NEAL A 15 //A_LoopActiveSound
+      NEAL B 40 //A_LoopActiveSound
+      Loop
+
+    /*
+    Pain:
+      NEAL C 5 A_SetShadow
+      NEAL B 4 A_Pain
+      NEAL C 5 A_ClearShadow
+      Goto Spawn
+    Wound:
+      NEAL B 6
+      NEAL C 13 A_GetHurt
+      Loop
+    Death:
+      NEAL D 5
+      NEAL E 5 A_Scream
+      NEAL F 6
+      NEAL G 5 A_NoBlocking
+      NEAL H 5
+      NEAL I 6
+      NEAL J -1
+      Stop
+    */
+  }
+}
