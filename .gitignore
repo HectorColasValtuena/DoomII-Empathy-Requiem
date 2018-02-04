@@ -1,3 +1,5 @@
 Thumbs.db
 *.bak
 *.db
+
+*.backup*
