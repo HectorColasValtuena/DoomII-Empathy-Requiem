@@ -2,7 +2,7 @@ ACTOR PrayingCultist 16899
 {
 
   Radius 16
-  Height 24
+  Height 48
   Mass 50000
   +SOLID
   +SHOOTABLE
