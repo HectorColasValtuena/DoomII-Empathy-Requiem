@@ -22,8 +22,8 @@ ACTOR PrayingCultist 16899
   {
     Spawn:
     See:
-      NEAL A 15 //A_LoopActiveSound
-      NEAL B 40 //A_LoopActiveSound
+      NEAL A 15 light("PrayingCultistGlowSmall") //A_LoopActiveSound
+      NEAL B 40 light("PrayingCultistGlowLarge") //A_LoopActiveSound
       Loop
 
     /*

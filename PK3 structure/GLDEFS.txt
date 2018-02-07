@@ -10,3 +10,4 @@
 
 //PROPS - TORCHES/LANTERNS/LAMPS
 #include "GLDEFS/Props/DoomFiresticksGLDefs.txt"
+#include "GLDEFS/Props/PrayingCultistGLDefs.txt"

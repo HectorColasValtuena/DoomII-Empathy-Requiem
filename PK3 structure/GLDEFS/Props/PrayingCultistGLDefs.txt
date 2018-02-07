@@ -1,0 +1,11 @@
+Pointlight PrayingCultistGlowSmall
+{
+	Color 0.5 0.0 0.0
+	Size 8
+}
+
+Pointlight PrayingCultistGlowLarge
+{
+	Color 0.8 0.0 0.0
+	Size 12
+}
