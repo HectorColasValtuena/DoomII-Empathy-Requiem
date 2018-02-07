@@ -5,11 +5,11 @@ ACTOR PrayingCultist 16899
   Height 48
   Mass 50000
   +SOLID
-  +SHOOTABLE
 
   /*
   Health 51
   PainChance 255
+  +SHOOTABLE
   +NOBLOOD
   +ISMONSTER
   +INCOMBAT
