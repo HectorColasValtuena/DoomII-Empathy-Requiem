@@ -1,0 +1,129 @@
+//Tall red firestick
+	flickerlight2 TallRedFirestickLight
+	{
+		color 1.0 0.0 0.0
+		size 96
+		secondarySize 128
+		interval 0.01
+	}
+
+	Object RedTorch
+	{
+		Frame TREDA { Light TallRedFirestickLight }
+		Frame TREDB { Light TallRedFirestickLight }
+		Frame TREDC { Light TallRedFirestickLight }
+		Frame TREDD { Light TallRedFirestickLight }
+	}
+
+//Tall Green firestick
+	flickerlight2 TallGreenFirestickLight
+	{
+		color 0.0 1.0 0.0
+		size 96
+		secondarySize 128
+		interval 0.01
+	}
+
+	Object GreenTorch
+	{
+		Frame TGRNA { Light TallGreenFirestickLight }
+		Frame TGRNB { Light TallGreenFirestickLight }
+		Frame TGRNC { Light TallGreenFirestickLight }
+		Frame TGRND { Light TallGreenFirestickLight }
+	}
+
+//Tall blue firestick
+	flickerlight2 TallBlueFirestickLight
+	{
+		color 0.0 0.0 1.0
+		size 96
+		secondarySize 128
+		interval 0.01
+	}
+
+	Object BlueTorch
+	{
+		Frame TBLUA { Light TallBlueFirestickLight }
+		Frame TBLUB { Light TallBlueFirestickLight }
+		Frame TBLUC { Light TallBlueFirestickLight }
+		Frame TBLUD { Light TallBlueFirestickLight }
+	}
+
+//Short red torch
+	flickerlight2 ShortRedFirestickLight
+	{
+		color 1.0 0.0 0.0
+		size 48
+		secondarySize 64
+		interval 0.01
+	}
+
+	Object ShortRedTorch
+	{
+		Frame SMRTA { Light ShortRedFirestickLight }
+		Frame SMRTB { Light ShortRedFirestickLight }
+		Frame SMRTC { Light ShortRedFirestickLight }
+		Frame SMRTD { Light ShortRedFirestickLight }
+	}
+
+//Short green torch
+	flickerlight2 ShortGreenFirestickLight
+	{
+		color 0.0 1.0 0.0
+		size 48
+		secondarySize 64
+		interval 0.01
+	}
+
+	Object ShortGreenTorch
+	{
+		Frame SMGTA { Light ShortGreenFirestickLight }
+		Frame SMGTB { Light ShortGreenFirestickLight }
+		Frame SMGTC { Light ShortGreenFirestickLight }
+		Frame SMGTD { Light ShortGreenFirestickLight }
+	}
+
+//Short blue torch
+	flickerlight2 ShortBlueFirestickLight
+	{
+		color 0.0 0.0 1.0
+		size 48
+		secondarySize 64
+		interval 0.01
+	}
+
+	Object ShortBlueTorch
+	{
+		Frame SMBTA { Light ShortBlueFirestickLight }
+		Frame SMBTB { Light ShortBlueFirestickLight }
+		Frame SMBTC { Light ShortBlueFirestickLight }
+		Frame SMBTD { Light ShortBlueFirestickLight }
+	}
+
+//Small candle
+	flickerlight2 SmallCandleLight
+	{
+		color 0.66 0.66 0.0
+		size 16
+		secondarySize 24
+		interval 0.02
+	}
+
+	Object Candlestick
+	{
+		Frame CANDA { Light SmallCandleLight }
+	}
+
+//Standing candelabra
+	flickerlight2 StandingCandelabraLight
+	{
+		color 0.66 0.66 0.0
+		size 64
+		secondarySize 96
+		interval 0.02
+	}
+
+	Object Candelabra
+	{
+		Frame CBRAA { Light StandingCandelabraLight }
+	}

@@ -7,3 +7,6 @@
 //HUMAN PROJECTILES
 #include "GLDEFS/Human/PlasmaPistolGLDefs.txt"
 #include "GLDEFS/Human/MantisMechHelixGLDefs.txt"
+
+//PROPS - TORCHES/LANTERNS/LAMPS
+#include "GLDEFS/Props/DoomFiresticksGLDefs.txt"
