@@ -5,6 +5,7 @@
 		size 96
 		secondarySize 128
 		interval 0.01
+		offset 0 56 0
 	}
 
 	Object RedTorch
@@ -22,6 +23,7 @@
 		size 96
 		secondarySize 128
 		interval 0.01
+		offset 0 56 0
 	}
 
 	Object GreenTorch
@@ -39,6 +41,7 @@
 		size 96
 		secondarySize 128
 		interval 0.01
+		offset 0 56 0
 	}
 
 	Object BlueTorch
@@ -56,6 +59,7 @@
 		size 48
 		secondarySize 64
 		interval 0.01
+		offset 0 32 0
 	}
 
 	Object ShortRedTorch
@@ -73,6 +77,7 @@
 		size 48
 		secondarySize 64
 		interval 0.01
+		offset 0 32 0
 	}
 
 	Object ShortGreenTorch
@@ -90,6 +95,7 @@
 		size 48
 		secondarySize 64
 		interval 0.01
+		offset 0 32 0
 	}
 
 	Object ShortBlueTorch
@@ -107,6 +113,7 @@
 		size 16
 		secondarySize 24
 		interval 0.01
+		offset 0 8 0
 	}
 
 	Object Candlestick
@@ -121,6 +128,7 @@
 		size 64
 		secondarySize 96
 		interval 0.01
+		offset 0 48 0
 	}
 
 	Object Candelabra
