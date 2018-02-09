@@ -39,9 +39,9 @@ maps
 			backsource = 0;
 			backoffsetx = 0;
 			backoffsety = 0;
-			backscalex = 100;
-			backscaley = 100;
-			gridsize = 8;
+			backscalex = 1000;
+			backscaley = 1000;
+			gridsize = 4;
 		}
 		
 	}
