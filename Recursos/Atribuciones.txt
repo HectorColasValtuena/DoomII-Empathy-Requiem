@@ -35,5 +35,8 @@ Sprites
 		Mancubus Arm - Xim
 		Plasma Repeater - BadMojo
 		Scepter of souls - Ghastly_Dragon
+
+	Textures
+		Useful Doom Edits - Enjay, Nightmare, Malinku, Earthquakes
 Music
 	Alternate Dark Ambient Music Pack - Sergeant-mark-iv
