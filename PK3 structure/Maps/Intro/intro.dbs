@@ -41,7 +41,7 @@ maps
 			backoffsety = 0;
 			backscalex = 1000;
 			backscaley = 1000;
-			gridsize = 4;
+			gridsize = 8;
 		}
 		
 	}
