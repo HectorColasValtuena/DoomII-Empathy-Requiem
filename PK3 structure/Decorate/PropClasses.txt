@@ -1,1 +1,2 @@
 #include "Decorate/PropClasses/PrayingCultist.txt"
+#include "Decorate/PropClasses/Corpses.txt"

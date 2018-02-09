@@ -1,0 +1,39 @@
+ACTOR DeadCyberdemon 16880
+{
+  States
+  {
+  Spawn:
+    CYBR P -1
+    Stop
+  }
+}
+
+ACTOR DeadBaron 16881
+{
+  States
+  {
+  Spawn:
+    BOSS O -1
+    Stop
+  }
+}
+
+ACTOR DeadArchVile 16882
+{
+  States
+  {
+  Spawn:
+    VILE Z -1
+    Stop
+  }
+}
+
+ACTOR DeadMancubus 16883
+{
+  States
+  {
+  Spawn:
+    FATT T -1
+    Stop
+  }
+}

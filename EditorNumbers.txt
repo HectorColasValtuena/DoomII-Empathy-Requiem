@@ -21,6 +21,10 @@ Pickups
 
 Props
 	16899	Praying cultist
+	16880	Dead cyberdemon
+	16881	Dead baron
+	16882	Dead arch vile
+	16883	Dead mancubus
 
 
 Quest
