@@ -3,6 +3,8 @@ Features
 	- rostros interfaz
 
 Fixes
+- Refactorizar definicion clases de KEYCONF a MAPINFO
+
 - no carga titlemap ni titlemus
 
 - Fix audio doomedsoul
