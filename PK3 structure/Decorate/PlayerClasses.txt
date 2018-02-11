@@ -2,6 +2,8 @@
 
 #include "Decorate/PlayerClasses/PlayerMonsterClassDefiner.txt"
 
+#include "Decorate/PlayerClasses/DoomedSoul.txt"
+
 #include "Decorate/PlayerClasses/BloodImpPlayer.txt"
 #include "Decorate/PlayerClasses/DemonPlayer.txt"
 #include "Decorate/PlayerClasses/SpectrePlayer.txt"

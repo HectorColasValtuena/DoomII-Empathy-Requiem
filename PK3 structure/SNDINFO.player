@@ -487,3 +487,10 @@ $playersound	ArchVilePlayerSnd	other	*land		dsvilsit
 $playersound	ArchVilePlayerSnd	other	*jump		dscjump
 $playersound	ArchVilePlayerSnd	other	*fist		dsvilatk
 $playersound	ArchVilePlayerSnd	other	*usefail	dsvilact
+
+
+////////////////////////////////
+////////////////////////////////!!!! Post rework additions beyond ////////////////////////////////
+////////////////////////////////
+
+player/doomedSoul/cry DSoulCry1

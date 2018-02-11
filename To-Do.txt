@@ -5,4 +5,6 @@ Features
 Fixes
 - no carga titlemap ni titlemus
 
+- Fix audio doomedsoul
+
 Y, por supuesto, TODO LO DEMÁS

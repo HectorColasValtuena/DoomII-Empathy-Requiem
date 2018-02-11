@@ -1,0 +1,33 @@
+actor DoomedSoul : PlayerPawn {
+	speed 0.85 //!
+	radius 16
+	height 48
+	RenderStyle SoulTrans
+
+	states 
+	{
+		Spawn:
+			SKUL AB 10 Bright
+	    	Loop
+		See:
+	    	SKUL AB 6 Bright
+	    	Loop
+		Missile:
+			SKUL C 10 Bright
+			SKUL D 4 Bright
+			SKUL CD 4 Bright
+			Goto Missile+2
+		Pain:
+			SKUL E 3 Bright
+			SKUL E 3 Bright A_Pain
+			Goto See
+		Death:
+			SKUL F 6 Bright
+			SKUL G 6 Bright A_Scream
+			SKUL H 6 Bright
+			SKUL I 6 Bright A_NoBlocking
+			SKUL J 6
+			SKUL K 6
+			Stop
+	}
+}
