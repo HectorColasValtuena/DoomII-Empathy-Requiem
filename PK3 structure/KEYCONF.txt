@@ -1,6 +1,6 @@
 clearplayerclasses
 
-addplayerclass DoomedSoul
+addplayerclass DoomedSoulHubPlayer
 addplayerclass BloodImpPlayer
 addplayerclass DemonPlayer
 addplayerclass SpectrePlayer

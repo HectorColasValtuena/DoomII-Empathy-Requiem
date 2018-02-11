@@ -1,0 +1,37 @@
+actor DoomedSoulHubPlayer : BaseEmpathyPlayer {
+	speed 0.85 //!
+	health 1
+	mass 50
+	radius 16
+	height 48
+	RenderStyle SoulTrans
+
+	player.viewheight 32
+
+	states 
+	{
+		Spawn:
+			PHNT AB 10 Bright
+	    	Loop
+		See:
+	    	PHNT AB 6 Bright
+	    	Loop
+		Missile:
+			PHNT C 10 Bright
+			PHNT D 4 Bright
+			PHNT CD 4 Bright
+			Goto Missile+2
+		Pain:
+			PHNT E 3 Bright
+			PHNT E 3 Bright A_Pain
+			Goto See
+		Death:
+			PHNT F 6 Bright
+			PHNT G 6 Bright A_Scream
+			PHNT H 6 Bright
+			PHNT I 6 Bright A_NoBlocking
+			PHNT J 6
+			PHNT K 6
+			Stop
+	}
+}
