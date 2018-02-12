@@ -1,3 +1,20 @@
+ACTOR CandlestickSwitchable : SwitchableDecoration 16870
+{
+  Radius 20
+  Height 14
+  ProjectilePassHeight -16
+  States
+  {
+    Spawn:
+    Active:
+      CAND A -1 Bright Light("SmallCandleLight")
+      stop
+    Inactive:
+      CAND Z -1
+      stop
+  }
+}
+
 ACTOR CandelabraSwitchable : SwitchableDecoration 16871
 {
   Radius 16
