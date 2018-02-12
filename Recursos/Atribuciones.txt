@@ -30,6 +30,7 @@ Sprites
 
 	Props
 		Lanterns - Jimmy
+		Candle color variations - theultimatefaris766
 
 	Weapons
 		Mancubus Arm - Xim

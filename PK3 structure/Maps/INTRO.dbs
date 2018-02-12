@@ -1,5 +1,5 @@
 type = "Doom Builder Map Settings Configuration";
-gameconfig = "GZDoom_DoomUDMF.cfg";
+gameconfig = "ZDoom_DoomUDMF.cfg";
 strictpatches = 0;
 
 maps
@@ -20,6 +20,7 @@ maps
 				notfortesting = 0;
 			}
 			
+			
 			resource1
 			{
 				type = 1;
@@ -28,7 +29,9 @@ maps
 				option2 = 0;
 				notfortesting = 0;
 			}
+			
 		}
+		
 		defaultfloortexture = "BLOOD1";
 		defaultceiltexture = "BLOOD1";
 		defaulttoptexture = "F_SKY1";
@@ -60,34 +63,22 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 32f;
+			gridsize = 32;
 		}
+		
 		
 		fieldtypes
 		{
 			
-			sidedef
+			vertex
 			{
-				offsetx_bottom = 1;
-				offsetx_mid = 1;
-				offsety_bottom = 1;
-				offsetx_top = 1;
-				offsety_mid = 1;
+				zceiling = 1;
+				zfloor = 1;
 			}
 			
-			sector
-			{
-				xpanningceiling = 1;
-				ypanningceiling = 1;
-				rotationceiling = 17;
-				xscaleceiling = 1;
-				yscaleceiling = 1;
-				xpanningfloor = 1;
-				ypanningfloor = 1;
-				rotationfloor = 17;
-				xscalefloor = 1;
-				yscalefloor = 1;
-			}
 		}
+		
 	}
+	
 }
+

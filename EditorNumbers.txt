@@ -20,11 +20,13 @@ Allies
 Pickups
 
 Props
-	16899	Praying cultist
 	16880	Dead cyberdemon
 	16881	Dead baron
 	16882	Dead arch vile
 	16883	Dead mancubus
+
+	16898	Praying cultist (switchable - off)
+	16899	Praying cultist
 
 
 Quest

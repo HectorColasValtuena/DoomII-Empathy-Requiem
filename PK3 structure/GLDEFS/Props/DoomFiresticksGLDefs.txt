@@ -2,8 +2,8 @@
 	flickerlight2 TallRedFirestickLight
 	{
 		color 1.0 0.0 0.0
-		size 96
-		secondarySize 128
+		size 128
+		secondarySize 192
 		interval 0.01
 		offset 0 56 0
 	}
@@ -20,8 +20,8 @@
 	flickerlight2 TallGreenFirestickLight
 	{
 		color 0.0 1.0 0.0
-		size 96
-		secondarySize 128
+		size 128
+		secondarySize 192
 		interval 0.01
 		offset 0 56 0
 	}
@@ -38,8 +38,8 @@
 	flickerlight2 TallBlueFirestickLight
 	{
 		color 0.0 0.0 1.0
-		size 96
-		secondarySize 128
+		size 128
+		secondarySize 192
 		interval 0.01
 		offset 0 56 0
 	}
@@ -125,8 +125,8 @@
 	flickerlight2 StandingCandelabraLight
 	{
 		color 0.66 0.66 0.0
-		size 64
-		secondarySize 96
+		size 96
+		secondarySize 128
 		interval 0.01
 		offset 0 48 0
 	}
