@@ -4,6 +4,7 @@ actor BaseEmpathyPlayer : PlayerPawn
     +NOSKIN
 
 	/* The following code block is to be removed when testing's finished, as final campaign won't have weapon pickups */
+	/*
 	    Player.StartItem "BFG9000"		//all weapons are given to avoid autoswitch
         Player.StartItem "Chaingun"		//when picking up them
         Player.StartItem "Chainsaw"
@@ -13,5 +14,6 @@ actor BaseEmpathyPlayer : PlayerPawn
         Player.StartItem "RocketLauncher"
         Player.StartItem "Shotgun"
         Player.StartItem "SuperShotgun"
+    */
     /*====*/
 }
