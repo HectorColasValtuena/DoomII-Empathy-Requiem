@@ -47,9 +47,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = true;
 		useresourcesinreadonlymode = true;
-		viewpositionx = -35.07768f;
-		viewpositiony = -2276.665f;
-		viewscale = 3.862973f;
+		viewpositionx = 276.6314f;
+		viewpositiony = -11.62192f;
+		viewscale = 0.4735607f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -60,7 +60,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 8f;
+			gridsize = 64f;
 		}
 		
 		fieldtypes
@@ -76,12 +76,17 @@ maps
 				offsetx_bottom = 1;
 				offsetx_mid = 1;
 				offsety_bottom = 1;
+				offsety_mid = 1;
+				scaley_mid = 1;
+				scalex_mid = 1;
+				lightabsolute = 3;
+				light = 0;
 			}
 			
 			sector
 			{
-				rotationceiling = 17;
-				rotationfloor = 1;
+				rotationceiling = 1;
+				rotationfloor = 17;
 				xpanningceiling = 1;
 				xpanningfloor = 1;
 				xscaleceiling = 1;
@@ -90,6 +95,8 @@ maps
 				ypanningfloor = 1;
 				yscaleceiling = 1;
 				yscalefloor = 1;
+				lightceilingabsolute = 3;
+				lightfloorabsolute = 3;
 			}
 		}
 	}
