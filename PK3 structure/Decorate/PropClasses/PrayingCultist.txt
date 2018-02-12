@@ -50,7 +50,7 @@ ACTOR PrayingCultist 16899
   }
 }
 
-ACTOR PrayingCultistSwitchable : SwitchableDecoration 16898
+ACTOR PrayingCultistDormant : SwitchableDecoration 16898
 {
   Radius 16
   Height 48

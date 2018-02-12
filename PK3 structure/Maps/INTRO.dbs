@@ -20,7 +20,6 @@ maps
 				notfortesting = 0;
 			}
 			
-			
 			resource1
 			{
 				type = 1;
@@ -29,9 +28,7 @@ maps
 				option2 = 0;
 				notfortesting = 0;
 			}
-			
 		}
-		
 		defaultfloortexture = "BLOOD1";
 		defaultceiltexture = "BLOOD1";
 		defaulttoptexture = "F_SKY1";
@@ -50,9 +47,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = true;
 		useresourcesinreadonlymode = true;
-		viewpositionx = 49.90985f;
-		viewpositiony = -1834.002f;
-		viewscale = 0.6156288f;
+		viewpositionx = 81.75565f;
+		viewpositiony = -51.90498f;
+		viewscale = 1.352536f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -63,22 +60,34 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 32;
+			gridsize = 16f;
 		}
-		
 		
 		fieldtypes
 		{
 			
-			vertex
+			sidedef
 			{
-				zceiling = 1;
-				zfloor = 1;
+				offsetx_bottom = 1;
+				offsetx_mid = 1;
+				offsety_bottom = 1;
+				offsetx_top = 1;
+				offsety_mid = 1;
 			}
 			
+			sector
+			{
+				rotationceiling = 1;
+				rotationfloor = 1;
+				xpanningceiling = 1;
+				xpanningfloor = 1;
+				xscaleceiling = 1;
+				xscalefloor = 1;
+				ypanningceiling = 1;
+				ypanningfloor = 1;
+				yscaleceiling = 1;
+				yscalefloor = 1;
+			}
 		}
-		
 	}
-	
 }
-
