@@ -32,9 +32,9 @@
 	16872	Red Torch (Switchable)
 	16873	Green Torch (Switchable)
 	16874	Blue Torch (Switchable)
-	16875	Short Red Torch (Switchable)
-	16876	Short Green Torch (Switchable)
-	16877	Short Blue Torch (Switchable)
+	16875	Red Short Torch (Switchable)
+	16876	Green Short Torch (Switchable)
+	16877	Blue Short Torch (Switchable)
 
 	16880	Dead cyberdemon
 	16881	Dead baron

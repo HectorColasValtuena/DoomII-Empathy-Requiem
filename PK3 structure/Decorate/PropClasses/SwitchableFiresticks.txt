@@ -32,3 +32,102 @@ ACTOR CandelabraSwitchable : SwitchableDecoration 16871
       stop
   }
 }
+
+
+////////////////
+// Tall torches
+ACTOR BaseTorchSwitchable : SwitchableDecoration
+{
+  Radius 16
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+    Spawn:
+    Active:
+      //!!active ommited for base class. Example: TRED ABCD 4 Bright Light("TallRedFirestickLight")
+    Inactive:
+      TRED Z -1
+      stop
+  }
+}
+
+actor RedTorchSwitchable : BaseTorchSwitchable 16872
+{
+  States
+  {
+    Active:
+      TRED ABCD 4 Bright Light("TallRedFirestickLight")
+      loop
+  }
+}
+
+actor GreenTorchSwitchable : BaseTorchSwitchable 16873
+{
+  States
+  {
+    Active:
+      TGRN ABCD 4 Bright Light("TallGreenFirestickLight")
+      loop
+  }
+}
+
+actor BlueTorchSwitchable : BaseTorchSwitchable 16874
+{
+  States
+  {
+    Active:
+      TBLU ABCD 4 Bright Light("TallBlueFirestickLight")
+      loop
+  }
+}
+
+////////////////
+// Short torches
+ACTOR BaseShortTorchSwitchable : SwitchableDecoration
+{
+  Radius 16
+  Height 36
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+    Spawn:
+    Active:
+      //!!active ommited for base class. Example: SMRT ABCD 4 Bright Light("ShortRedFirestickLight")
+    Inactive:
+      SMRT Z -1
+      stop
+  }
+}
+
+actor RedShortTorchSwitchable : BaseShortTorchSwitchable 16875
+{
+  States
+  {
+    Active:
+      SMRT ABCD 4 Bright Light("ShortRedFirestickLight")
+      loop
+  }
+}
+
+actor GreenShortTorchSwitchable : BaseShortTorchSwitchable 16876
+{
+  States
+  {
+    Active:
+      SMGT ABCD 4 Bright Light("ShortGreenFirestickLight")
+      loop
+  }
+}
+
+actor BlueShortTorchSwitchable : BaseShortTorchSwitchable 16877
+{
+  States
+  {
+    Active:
+      SMBT ABCD 4 Bright Light("ShortBlueFirestickLight")
+      loop
+  }
+}
