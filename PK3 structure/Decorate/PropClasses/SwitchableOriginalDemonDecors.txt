@@ -1,4 +1,4 @@
-ACTOR GlowingEvilEye : SwitchableDecoration 16878
+ACTOR GlowingEvilEye : SwitchableDecoration replaces EvilEye	//16878
 {
   Radius 16
   Height 54

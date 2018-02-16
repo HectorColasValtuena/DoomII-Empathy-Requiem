@@ -1,4 +1,4 @@
-ACTOR CandlestickSwitchable : SwitchableDecoration 16870
+ACTOR CandlestickSwitchable : SwitchableDecoration replaces Candlestick //16870
 {
   Radius 20
   Height 14
@@ -15,7 +15,7 @@ ACTOR CandlestickSwitchable : SwitchableDecoration 16870
   }
 }
 
-ACTOR CandelabraSwitchable : SwitchableDecoration 16871
+ACTOR CandelabraSwitchable : SwitchableDecoration replaces Candelabra //16871
 {
   Radius 16
   Height 60
@@ -53,7 +53,7 @@ ACTOR BaseTorchSwitchable : SwitchableDecoration
   }
 }
 
-actor RedTorchSwitchable : BaseTorchSwitchable 16872
+actor RedTorchSwitchable : BaseTorchSwitchable replaces RedTorch //16872
 {
   States
   {
@@ -63,7 +63,7 @@ actor RedTorchSwitchable : BaseTorchSwitchable 16872
   }
 }
 
-actor GreenTorchSwitchable : BaseTorchSwitchable 16873
+actor GreenTorchSwitchable : BaseTorchSwitchable replaces GreenTorch //16873
 {
   States
   {
@@ -73,7 +73,7 @@ actor GreenTorchSwitchable : BaseTorchSwitchable 16873
   }
 }
 
-actor BlueTorchSwitchable : BaseTorchSwitchable 16874
+actor BlueTorchSwitchable : BaseTorchSwitchable replaces BlueTorch //16874
 {
   States
   {
@@ -102,7 +102,7 @@ ACTOR BaseShortTorchSwitchable : SwitchableDecoration
   }
 }
 
-actor RedShortTorchSwitchable : BaseShortTorchSwitchable 16875
+actor RedShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortRedTorch //16875
 {
   States
   {
@@ -112,7 +112,7 @@ actor RedShortTorchSwitchable : BaseShortTorchSwitchable 16875
   }
 }
 
-actor GreenShortTorchSwitchable : BaseShortTorchSwitchable 16876
+actor GreenShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortGreenTorch //16876
 {
   States
   {
@@ -122,7 +122,7 @@ actor GreenShortTorchSwitchable : BaseShortTorchSwitchable 16876
   }
 }
 
-actor BlueShortTorchSwitchable : BaseShortTorchSwitchable 16877
+actor BlueShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortBlueTorch //16877
 {
   States
   {
