@@ -1,3 +1,5 @@
 #include "Decorate/PropClasses/Corpses.txt"
 #include "Decorate/PropClasses/PrayingCultist.txt"
 #include "Decorate/PropClasses/SwitchableFiresticks.txt"
+#include "Decorate/PropClasses/DemonStatues.txt"
+#include "Decorate/PropClasses/SwitchableOriginalDemonDecors.txt"

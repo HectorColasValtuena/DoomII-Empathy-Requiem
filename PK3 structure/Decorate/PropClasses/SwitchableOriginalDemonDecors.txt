@@ -1,0 +1,17 @@
+ACTOR GlowingEvilEye : SwitchableDecoration 16878
+{
+  Radius 16
+  Height 54
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+    Spawn:
+    Active:
+      	CEYE ABCB 6 Bright Light("EvilEyeGlow")
+    	Loop
+    Inactive:
+		CAND Z -1
+		stop
+  }
+}

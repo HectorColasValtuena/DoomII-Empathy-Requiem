@@ -11,3 +11,6 @@
 //PROPS - TORCHES/LANTERNS/LAMPS
 #include "GLDEFS/Props/DoomFiresticksGLDefs.txt"
 #include "GLDEFS/Props/PrayingCultistGLDefs.txt"
+
+//PROPS - DEMONIC DECORATIONS
+#include "GLDEFS/Props/DoomDemonicDecorsGLDefs.txt"

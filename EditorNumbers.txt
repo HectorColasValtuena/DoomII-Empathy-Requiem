@@ -27,6 +27,7 @@
 ////////////////////////////////////////////////////////////////
 ////    Props
 ////////////////////////////////////////////////////////////////	
+
 	16870	Candle (Switchable)
 	16871	Candelabra (Switchable)
 	16872	Red Torch (Switchable)
@@ -35,14 +36,18 @@
 	16875	Red Short Torch (Switchable)
 	16876	Green Short Torch (Switchable)
 	16877	Blue Short Torch (Switchable)
+	16878	Glowing Evil Eye (Switchable)
 
 	16880	Dead cyberdemon
 	16881	Dead baron
 	16882	Dead arch vile
 	16883	Dead mancubus
 
+	16890	Gray Baron Statue Howling
+	16891	Gray Archvile Statue Howling
+	16892	Gray Cyberdemon Statue Howling
+
 	16898	Praying cultist (dormant)
 	16899	Praying cultist
-
 
 Quest

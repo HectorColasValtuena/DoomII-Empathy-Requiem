@@ -47,9 +47,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = true;
 		useresourcesinreadonlymode = true;
-		viewpositionx = 3.482796f;
-		viewpositiony = -2342.27f;
-		viewscale = 1.352528f;
+		viewpositionx = 25.7084f;
+		viewpositiony = -3498.564f;
+		viewscale = 1.040403f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -60,7 +60,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 16f;
+			gridsize = 32f;
 		}
 		
 		fieldtypes
@@ -85,7 +85,7 @@ maps
 			
 			sector
 			{
-				rotationceiling = 1;
+				rotationceiling = 17;
 				rotationfloor = 17;
 				xpanningceiling = 1;
 				xpanningfloor = 1;

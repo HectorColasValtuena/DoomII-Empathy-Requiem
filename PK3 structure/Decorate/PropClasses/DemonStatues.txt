@@ -1,0 +1,56 @@
+ACTOR ChargingBaronStatue 6968
+{
+	Radius 24
+	Height 64
+	+SOLID
+	States
+	{
+	Spawn:
+		BOSS E -1
+		Stop
+	}
+}
+
+ACTOR CastingArchvileStatue 6967
+{
+	Radius 20
+	Height 56
+	+SOLID
+	States
+	{
+	Spawn:
+		VILE K -1
+		Stop
+	}
+}
+
+ACTOR ArchvileFlameStatue 6966
+{
+	RenderStyle Add
+	Alpha 1
+	States
+	{
+	Spawn:
+		FIRE B -1
+		Stop
+	}
+}
+
+ACTOR GrayBaronStatueHowling : SwitchableDecoration 16890
+{
+	Radius 24
+	Height 64
+	+SOLID
+	States
+	{
+		Spawn:
+			goto Active + 1
+	    Active:
+	      BOSG A 0 A_PlaySound("baron/sight")
+	      BOSG A -1
+	      stop
+	    Inactive:
+	      BOSG A -1
+	      stop
+	}
+}
