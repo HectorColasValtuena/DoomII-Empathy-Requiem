@@ -44,7 +44,7 @@
 	16883	Dead mancubus
 
 	16890	Gray Baron Statue Howling
-	16891	Gray Archvile Statue Howling
+	16891	Gray ArchVile Statue Howling
 	16892	Gray Cyberdemon Statue Howling
 
 	16898	Praying cultist (dormant)
