@@ -46,40 +46,65 @@ ACTOR BaseTorchSwitchable : SwitchableDecoration
   {
     Spawn:
     Active:
-      //!!active ommited for base class. Example: TRED ABCD 4 Bright Light("TallRedFirestickLight")
+      TRED Z -1//!!active ommited for base class. Example: TRED ABCD 4 Bright Light("TallRedFirestickLight")
+      stop
     Inactive:
       TRED Z -1
       stop
   }
 }
 
-actor RedTorchSwitchable : BaseTorchSwitchable replaces RedTorch //16872
+actor RedTorchSwitchable : SwitchableDecoration replaces RedTorch //16872
 {
+  Radius 16
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       TRED ABCD 4 Bright Light("TallRedFirestickLight")
       loop
+    Inactive:
+      TRED Z -1
+      stop
   }
 }
 
-actor GreenTorchSwitchable : BaseTorchSwitchable replaces GreenTorch //16873
+actor GreenTorchSwitchable : SwitchableDecoration replaces GreenTorch //16873
 {
+  Radius 16
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       TGRN ABCD 4 Bright Light("TallGreenFirestickLight")
       loop
+    Inactive:
+      TRED Z -1
+      stop
   }
 }
 
-actor BlueTorchSwitchable : BaseTorchSwitchable replaces BlueTorch //16874
+actor BlueTorchSwitchable : SwitchableDecoration replaces BlueTorch //16874
 {
+  Radius 16
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       TBLU ABCD 4 Bright Light("TallBlueFirestickLight")
       loop
+    Inactive:
+      TRED Z -1
+      stop
   }
 }
 
@@ -102,32 +127,56 @@ ACTOR BaseShortTorchSwitchable : SwitchableDecoration
   }
 }
 
-actor RedShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortRedTorch //16875
+actor RedShortTorchSwitchable : SwitchableDecoration replaces ShortRedTorch //16875
 {
+  Radius 16
+  Height 36
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       SMRT ABCD 4 Bright Light("ShortRedFirestickLight")
       loop
+    Inactive:
+      SMRT Z -1
+      stop
   }
 }
 
-actor GreenShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortGreenTorch //16876
+actor GreenShortTorchSwitchable : SwitchableDecoration replaces ShortGreenTorch //16876
 {
+  Radius 16
+  Height 36
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       SMGT ABCD 4 Bright Light("ShortGreenFirestickLight")
       loop
+    Inactive:
+      SMRT Z -1
+      stop
   }
 }
 
-actor BlueShortTorchSwitchable : BaseShortTorchSwitchable replaces ShortBlueTorch //16877
+actor BlueShortTorchSwitchable : SwitchableDecoration replaces ShortBlueTorch //16877
 {
+  Radius 16
+  Height 36
+  ProjectilePassHeight -16
+  +SOLID
   States
   {
+    Spawn:
     Active:
       SMBT ABCD 4 Bright Light("ShortBlueFirestickLight")
       loop
+    Inactive:
+      SMRT Z -1
+      stop
   }
 }

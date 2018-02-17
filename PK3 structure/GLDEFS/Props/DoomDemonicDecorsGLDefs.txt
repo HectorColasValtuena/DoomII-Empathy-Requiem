@@ -1,9 +1,19 @@
 //Evil eye above candle
 pulselight EvilEyeGlow
-	{
-		color 0.2 1.0 0.1
-		size 32
-		secondarySize 64
-		interval 2.0
-		offset 0 32 0
-	}
+{
+	color 0.2 1.0 0.1
+	size 32
+	secondarySize 64
+	interval 2.0
+	offset 0 32 0
+}
+
+//Floating skull rock
+pulselight FloatingSkullGlow
+{
+	color 1.0 1.0 0.0
+	size 48
+	secondarySize 64
+	interval 1.0
+	offset 0 32 0
+}

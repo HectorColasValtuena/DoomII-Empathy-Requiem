@@ -15,3 +15,21 @@ ACTOR GlowingEvilEye : SwitchableDecoration replaces EvilEye	//16878
 		stop
   }
 }
+
+ACTOR GlowingFloatingSkull : SwitchableDecoration replaces FloatingSkull
+{
+  Radius 16
+  Height 26
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+  Spawn:
+  	Active:
+    	FSKU ABC 6 Bright Light("FloatingSkullGlow")
+    	loop
+	Inactive:
+		FSKU A -1
+		stop
+  }
+}
