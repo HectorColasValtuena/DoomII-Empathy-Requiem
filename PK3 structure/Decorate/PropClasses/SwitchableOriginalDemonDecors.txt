@@ -33,3 +33,21 @@ ACTOR GlowingFloatingSkull : SwitchableDecoration replaces FloatingSkull
 		stop
   }
 }
+
+ACTOR GlowingHeadCandles : SwitchableDecoration replaces HeadCandles
+{
+  Radius 16
+  Height 42
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+   	Spawn:
+  	Active:
+    	POL3 AB 6 Bright Light("HeadCandlesLight")
+    	Loop
+	Inactive:
+		POL3 A -1
+		stop
+  }
+}
