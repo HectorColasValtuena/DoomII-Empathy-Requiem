@@ -4,8 +4,8 @@
 16600-16799 Props/decorations
 16800-16899 ??????
 16900-16999 Quest items/NPCs
-17000-17199 Invisible lights
-17200-17399 Invisible sounds
+17000-17999 Invisible lights
+18000-18999 Invisible sounds
 
 ////////////////////////////////////////////////////////////////
 ////    Monsters
@@ -60,7 +60,13 @@
 ////////////////////////////////////////////////////////////////
 ////    Invisible lights
 ////////////////////////////////////////////////////////////////	
-	Notation:	LightSrc COLOR		SIZE	TYPE		HARDNESS
-	17003		LightSrc White		96		-			-
+	index	LightSrc COLOR		SIZE	TYPE		HARDNESS
+	17000	LightSrc White		16		-			-
+	17001	LightSrc White		32		-			-
+	17002	LightSrc White		64		-			-
+	17003	LightSrc White		96		-			-
 
-	17403		LightSrc Amber		96		Pulse slow
+	17142	LightSrc Green		64		Flicker1		
+
+	17402	LightSrc Amber		64		Pulse slow
+	17403	LightSrc Amber		96		Pulse slow

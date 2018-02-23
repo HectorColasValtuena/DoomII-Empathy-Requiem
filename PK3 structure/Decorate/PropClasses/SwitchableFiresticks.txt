@@ -36,6 +36,7 @@ ACTOR CandelabraSwitchable : SwitchableDecoration replaces Candelabra //16871
 
 ////////////////
 // Tall torches
+/*  Inheritance discarded: inheriting from a class inheriting from SwitchableDecoration doesn't grant switchability
 ACTOR BaseTorchSwitchable : SwitchableDecoration
 {
   Radius 16
@@ -53,6 +54,7 @@ ACTOR BaseTorchSwitchable : SwitchableDecoration
       stop
   }
 }
+*/
 
 actor RedTorchSwitchable : SwitchableDecoration replaces RedTorch //16872
 {
@@ -110,6 +112,7 @@ actor BlueTorchSwitchable : SwitchableDecoration replaces BlueTorch //16874
 
 ////////////////
 // Short torches
+/*  Inheritance discarded: inheriting from a class inheriting from SwitchableDecoration doesn't grant switchability
 ACTOR BaseShortTorchSwitchable : SwitchableDecoration
 {
   Radius 16
@@ -126,6 +129,7 @@ ACTOR BaseShortTorchSwitchable : SwitchableDecoration
       stop
   }
 }
+*/
 
 actor RedShortTorchSwitchable : SwitchableDecoration replaces ShortRedTorch //16875
 {

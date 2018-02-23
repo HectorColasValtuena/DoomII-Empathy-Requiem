@@ -1,14 +1,53 @@
+////////////////////////////////////////////////////////////////
+////    White Lights
+pointlight LightSrcWhite16
+{
+	color 0.8 0.8 0.8
+	size 16
+}
+
+pointlight LightSrcWhite32
+{
+	color 0.8 0.8 0.8
+	size 32
+}
+
+pointlight LightSrcWhite64
+{
+	color 0.8 0.8 0.8
+	size 64
+}
+
 pointlight LightSrcWhite96
 {
 	color 0.8 0.8 0.8
 	size 96
 }
 
+////////////////////////////////////////////////////////////////
+////    Green
+flickerlight LightSrcGreen64Flicker1
+{
+	color 0.0 0.1 0.2
+	size 32
+	secondarySize 64
+	chance 0.1
+}
+
+
+////////////////////////////////////////////////////////////////
+////    Tertiary
+pulselight LightSrcAmber64PulseSlow
+{
+	color 0.8 0.6 0.2
+	size 32
+	secondarySize 64
+	interval 3.0
+}
 pulselight LightSrcAmber96PulseSlow
 {
 	color 0.8 0.6 0.2
 	size 48
 	secondarySize 96
-	interval 2.0
-	offset 0 0 0
+	interval 3.0
 }

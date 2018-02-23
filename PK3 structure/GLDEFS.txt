@@ -14,3 +14,6 @@
 
 //PROPS - DEMONIC DECORATIONS
 #include "GLDEFS/Props/DoomDemonicDecorsGLDefs.txt"
+
+//PROPS - INVISIBLE LIGHTS
+#include "GLDEFS/Props/InvisibleLightsGLDefs.txt"
