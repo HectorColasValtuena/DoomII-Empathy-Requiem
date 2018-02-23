@@ -1,0 +1,14 @@
+pointlight LightSrcWhite96
+{
+	color 0.8 0.8 0.8
+	size 96
+}
+
+pulselight LightSrcAmber96PulseSlow
+{
+	color 0.8 0.6 0.2
+	size 48
+	secondarySize 96
+	interval 2.0
+	offset 0 0 0
+}

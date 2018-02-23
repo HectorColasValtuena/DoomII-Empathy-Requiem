@@ -1,0 +1,52 @@
+/*
+ACTOR LightSrcExample : SwitchableDecoration
+{
+  Radius 0
+  Height 0
+
+  States
+  {
+    Spawn:
+    Active:
+      TNT1 Z -1 Light("lightname")
+      stop
+    Inactive:
+      TNT1 Z -1
+      stop
+  }
+}
+*/
+
+ACTOR LightSrcWhite96 : SwitchableDecoration 17003
+{
+  Radius 0
+  Height 0
+
+  States
+  {
+    Spawn:
+    Active:
+      TNT1 Z -1 Light("LightSrcWhite96")
+      stop
+    Inactive:
+      TNT1 Z -1
+      stop
+  }
+}
+
+ACTOR LightSrcAmber96PulseSlow : SwitchableDecoration 17403
+{
+  Radius 0
+  Height 0
+
+  States
+  {
+    Spawn:
+    Active:
+      TNT1 Z -1 Light("LightSrcAmber96PulseSlow")
+      stop
+    Inactive:
+      TNT1 Z -1
+      stop
+  }
+}

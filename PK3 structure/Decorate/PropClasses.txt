@@ -3,3 +3,4 @@
 #include "Decorate/PropClasses/SwitchableFiresticks.txt"
 #include "Decorate/PropClasses/DemonStatues.txt"
 #include "Decorate/PropClasses/SwitchableOriginalDemonDecors.txt"
+#include "Decorate/PropClasses/InvisibleLights.txt"
