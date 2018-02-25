@@ -1,4 +1,5 @@
-ACTOR ChargingBaronStatue 6968
+//Old  titlemap statue, to be removed
+ACTOR ChargingBaronStatue 6968 
 {
 	Radius 24
 	Height 64
@@ -10,6 +11,7 @@ ACTOR ChargingBaronStatue 6968
 		Stop
 	}
 }
+
 
 ACTOR CastingArchvileStatue 6967
 {
@@ -24,6 +26,7 @@ ACTOR CastingArchvileStatue 6967
 	}
 }
 
+//Old  titlemap statue, to be removed
 ACTOR ArchvileFlameStatue 6966
 {
 	RenderStyle Add
@@ -70,6 +73,25 @@ ACTOR GrayArchVileStatueHowling : SwitchableDecoration 16891
 	      stop
 	    Inactive:
 	      VILG A -1
+	      stop
+	}
+}
+
+ACTOR GrayCyberdemonStatueHowling : SwitchableDecoration 16892
+{
+	Radius 32
+	Height 96
+	+SOLID
+	States
+	{
+		Spawn:
+			goto Active + 1
+	    Active:
+	      CYBS A 0 A_PlaySound("cyber/sight")
+	      CYBS A -1
+	      stop
+	    Inactive:
+	      CYBS A -1
 	      stop
 	}
 }
