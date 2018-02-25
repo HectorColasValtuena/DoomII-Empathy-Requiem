@@ -65,6 +65,7 @@
 	17001	LightSrc White		32		-			-
 	17002	LightSrc White		64		-			-
 	17003	LightSrc White		96		-			-
+	17014	LightSrc White		128		Strong
 
 	17142	LightSrc Green		64		Flicker1		
 

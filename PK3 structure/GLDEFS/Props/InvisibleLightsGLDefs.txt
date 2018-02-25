@@ -24,6 +24,12 @@ pointlight LightSrcWhite96
 	size 96
 }
 
+pointlight LightSrcWhite128Strong
+{
+	color 1.0 1.0 1.0
+	size 128
+}
+
 ////////////////////////////////////////////////////////////////
 ////    Green
 flickerlight LightSrcGreen64Flicker1
